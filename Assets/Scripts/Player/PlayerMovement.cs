@@ -28,7 +28,7 @@ namespace ThemJammers.Player
             {
                 return;
             }
-            direction *= movementSpeed;
+            direction *= IsGrounded() ? movementSpeed : movementSpeed * 0.3f;
             _rigidbody.AddForce(new Vector3(direction.x, 0, direction.y), ForceMode.Impulse);
         }
         
@@ -92,7 +92,7 @@ namespace ThemJammers.Player
         {
             //Only jump if player is not already in the air
             if (!IsGrounded()) return;
-            _rigidbody.AddForce(Vector3.up * power, ForceMode.Impulse);
+            _rigidbody.AddForce(Vector3.up * power, ForceMode.Acceleration);
         }
 
         private bool IsGrounded()

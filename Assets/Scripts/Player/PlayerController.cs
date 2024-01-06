@@ -1,8 +1,8 @@
-using UnityEngine;
+using ThemJammers.Core;
 
 namespace ThemJammers.Player
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : GameCharacter
     {
         private PlayerMovement _playerMovement;
         private PlayerInput _playerInput;
