@@ -27,7 +27,7 @@ namespace Player
                 return;
             }
             direction *= IsGrounded() ? movementSpeed : movementSpeed * 0.3f;
-            _rigidbody.AddForce(new Vector3(direction.x, 0, direction.y), ForceMode.Impulse);
+            transform.Translate(new Vector3(direction.x, 0, direction.y));
         }
         
         public void Turn(Vector2 input)

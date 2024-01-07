@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8742519151999327002}
   - component: {fileID: 8801652700791647995}
   - component: {fileID: 7400300041823279085}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player Root
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3145975042106863833}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c8df8d4a5fd9f4e807d050f143e6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.5
+  movementSpeed: 0.15
   jumpPower: 100
   turningSensitivity: 10
   _playerInput: {fileID: 8801652700791647995}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 6579806656215838800}
   - component: {fileID: 5645414613967997522}
   - component: {fileID: 4967357769698854120}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shooty Thing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7075828988380169680}
   m_Father: {fileID: 3145975042106863833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5200677758334445735
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464cfc52b8b7493f8d561e062cfe4be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpawn: {fileID: 0}
+  projectileSpawn: {fileID: 7075828988380169680}
   projectileData: {fileID: 11400000, guid: 6dfedcc7101c7544d87240113bfb0a1b, type: 2}
 --- !u!1 &1805084766570380297
 GameObject:
@@ -321,7 +322,7 @@ GameObject:
   - component: {fileID: 6890979979233036046}
   - component: {fileID: 7648711257006095482}
   - component: {fileID: 5006987679261470866}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -378,7 +379,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -457,7 +458,7 @@ GameObject:
   - component: {fileID: 3145975042106863833}
   - component: {fileID: 4904653678781149265}
   - component: {fileID: 12331595350648737}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,6 +531,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8028326186643533341}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &8900436987313256292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7075828988380169680}
+  m_Layer: 7
+  m_Name: ProjectileSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7075828988380169680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8900436987313256292}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4278729456730435495}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8421862440046166740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -538,9 +570,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5040602812501103203}
     m_Modifications:
+    - target: {fileID: 1297705990757858, guid: 445b7906bd5b5e8419f9f1296bbda700, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3575664897294283092, guid: 445b7906bd5b5e8419f9f1296bbda700, type: 3}
       propertyPath: m_Name
       value: Stats UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575664897294283092, guid: 445b7906bd5b5e8419f9f1296bbda700, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6565914327533617628, guid: 445b7906bd5b5e8419f9f1296bbda700, type: 3}
       propertyPath: m_Pivot.x
