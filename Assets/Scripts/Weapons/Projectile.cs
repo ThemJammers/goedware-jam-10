@@ -12,6 +12,7 @@ namespace Weapons
     {
         [SerializeField] protected ProjectileData projectileData;
         private Rigidbody _rigidbody;
+        private bool active = true;
         
         private void Awake()
         {
@@ -33,11 +34,15 @@ namespace Weapons
         {
             if (other.CompareTag("Player") || other.CompareTag("Enemy"))
             {
-                //A character was hit, take away that precious hp
-                GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
-                gameCharacter.TakeDamage(projectileData.damage);
-                KnockbackCharacter(gameCharacter);
-                Dispose();
+                if (active)
+                {
+                    //A character was hit, take away that precious hp
+                    GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
+                    gameCharacter.TakeDamage(projectileData.damage);
+                    KnockbackCharacter(gameCharacter);
+                    Dispose();
+                }
+                active = false;
             }
             else
             {

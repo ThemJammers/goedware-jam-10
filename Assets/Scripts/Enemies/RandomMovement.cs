@@ -21,11 +21,13 @@ namespace Enemies
         public void StartMoving()
         {
             _move = true;
+            agent.isStopped = false;
         }
 
         public void StopMoving()
         {
             _move = false;
+            agent.isStopped = true;
         }
     
         void Update()

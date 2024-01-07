@@ -1,5 +1,6 @@
 using Core;
 using Interfaces;
+using Loot;
 using UnityEngine;
 using Weapons;
 
@@ -11,6 +12,7 @@ namespace Enemies
         [SerializeField] private float detectionRadius = 5;
         //Defines the speed in which the enemy can aim at the player
         [SerializeField] private float targetingSpeed = 1;
+        [SerializeField] protected EnemyTier tier = EnemyTier.Tier1;
         protected Transform _playerTransform = null;
         protected Weapon _weapon;
         protected virtual void Awake()
@@ -91,6 +93,12 @@ namespace Enemies
                 _playerTransform = GameObject.FindWithTag("Player").transform;
                 CancelInvoke(nameof(ScanForPlayer));
             }
+        }
+
+        public override void Die()
+        {
+            LootController.Instance.SpawnLoot(transform.position, tier);
+            base.Die();
         }
 
         protected virtual void OnDrawGizmos()

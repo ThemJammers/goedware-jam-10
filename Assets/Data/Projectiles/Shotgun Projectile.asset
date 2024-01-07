@@ -16,5 +16,5 @@ MonoBehaviour:
   speed: 10
   lifetime: 5
   shootingInterval: 1
-  knockbackPower: 15
+  knockbackPower: 3
   prefab: {fileID: 5151914502977036383, guid: 36843656b1892bf42b7d8662bdb2d869, type: 3}
