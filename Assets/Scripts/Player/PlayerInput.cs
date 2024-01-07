@@ -10,7 +10,7 @@ namespace ThemJammers.Player
         public Vector2 LookDirectionVector { get; private set; }
         public bool Jumping { get; private set;}
 
-        public bool IsGamepad = false;
+        public bool IsGamepad { get; private set;}
         private CustomInput _input;
 
         private void Awake()

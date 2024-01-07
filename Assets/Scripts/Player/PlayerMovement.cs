@@ -32,25 +32,25 @@ namespace ThemJammers.Player
             _rigidbody.AddForce(new Vector3(direction.x, 0, direction.y), ForceMode.Impulse);
         }
         
-        public void Turn(Vector2 direction)
+        public void Turn(Vector2 input)
         {
             if (_playerInput.IsGamepad)
             {
-                TurnWithGamepad(direction);
+                TurnWithGamepad(input);
             }
             else
             {
-                TurnWithMouse(direction);
+                TurnWithMouse(input);
             }
         }
 
-        private void TurnWithGamepad(Vector2 direction)
+        private void TurnWithGamepad(Vector2 input)
         {
             //Check if the inputs are above the controller deadzone
             //TODO: change .01f to an actual variable
-            if (Mathf.Abs(direction.x) > .01f || Mathf.Abs(direction.y) > .01f)
+            if (Mathf.Abs(input.x) > .01f || Mathf.Abs(input.y) > .01f)
             {
-                Vector3 playerDirection = Vector3.right * direction.x + Vector3.forward * direction.y;
+                Vector3 playerDirection = Vector3.right * input.x + Vector3.forward * input.y;
                 //Only turn if there is an actual turning input
                 if (playerDirection.sqrMagnitude > 0.0f)
                 {
@@ -61,10 +61,10 @@ namespace ThemJammers.Player
             }
         }
 
-        private void TurnWithMouse(Vector2 direction)
+        private void TurnWithMouse(Vector2 mousePosition)
         {
             //Cast a ray from mouse Position to an imaginary ground plane
-            Ray ray = Camera.main.ScreenPointToRay(direction);
+            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
             Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
             float rayDistance;
             //Check if the plane was hit

@@ -8,7 +8,7 @@ namespace ThemJammers.Core
 {
     public abstract class GameCharacter : MonoBehaviour, IDamageable
     {
-        [FormerlySerializedAs("onHealthChanged")] public UnityEvent HealthChanged;
+        public UnityEvent HealthChanged;
         public int Health { get; set; } = 100;
         public int Defense { get; set; } = 0;
         public virtual void Die()
@@ -23,10 +23,6 @@ namespace ThemJammers.Core
             float dmgAbsorption = (100 - Defense) / 100;
             int dmg = (int)(amount * dmgAbsorption);
             UpdateHealth(Health - dmg);
-            if (Health <= 0)
-            {
-                Die();
-            }
         }
 
         public virtual void Heal(int amount)
@@ -41,8 +37,12 @@ namespace ThemJammers.Core
 
         public virtual void UpdateHealth(int newHealth)
         {
-            Health = newHealth;
+            Health = Mathf.Clamp(newHealth, 0, 100);
             HealthChanged?.Invoke();;
+            if (Health <= 0)
+            {
+                Die();
+            }
         }
     }
 }

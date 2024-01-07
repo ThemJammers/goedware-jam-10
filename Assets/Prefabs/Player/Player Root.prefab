@@ -69,8 +69,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95619158407743351}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 1
+  m_Mass: 1.5
+  m_Drag: 1.5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c8df8d4a5fd9f4e807d050f143e6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.3
+  movementSpeed: 0.5
   jumpPower: 100
   turningSensitivity: 10
   _playerInput: {fileID: 8801652700791647995}
@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e430dcb20aaf5e34a85220f219aab352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsGamepad: 0
 --- !u!114 &7400300041823279085
 MonoBehaviour:
   m_ObjectHideFlags: 0
