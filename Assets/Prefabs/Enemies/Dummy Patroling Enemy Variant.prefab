@@ -102,8 +102,8 @@ MonoBehaviour:
   HealthChanged:
     m_PersistentCalls:
       m_Calls: []
-  detectionRadius: 5
-  targetingSpeed: 1
+  detectionRadius: 4
+  targetingSpeed: 3
 --- !u!195 &8260733814056546672
 NavMeshAgent:
   m_ObjectHideFlags: 0

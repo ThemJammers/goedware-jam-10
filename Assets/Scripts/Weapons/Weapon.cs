@@ -21,6 +21,11 @@ namespace Weapons
             StartCoroutine(WaitForInterval());
         }
 
+        public virtual void ChangeProjectile(ProjectileData newProjectile)
+        {
+            projectileData = newProjectile;
+        }
+
         protected virtual IEnumerator WaitForInterval()
         {
             shootingLocked = true;

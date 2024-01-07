@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Core;
 using Data;
 using UnityEngine;
@@ -9,14 +10,23 @@ namespace Weapons
     [RequireComponent(typeof(Collider))]
     public class Projectile : MonoBehaviour
     {
-        [SerializeField] private ProjectileData projectileData;
+        [SerializeField] protected ProjectileData projectileData;
         private Rigidbody _rigidbody;
         
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            _rigidbody.AddForce(transform.forward * projectileData.speed, ForceMode.Impulse);
             StartCoroutine(DestroyWithDelay());
+        }
+
+        protected virtual void Start()
+        {
+            LaunchProjectile();
+        }
+
+        protected virtual void LaunchProjectile()
+        {
+            _rigidbody.AddForce(transform.forward * projectileData.speed, ForceMode.Impulse);
         }
 
         protected virtual void OnTriggerEnter(Collider other)
@@ -26,6 +36,7 @@ namespace Weapons
                 //A character was hit, take away that precious hp
                 GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
                 gameCharacter.TakeDamage(projectileData.damage);
+                KnockbackCharacter(gameCharacter);
                 Dispose();
             }
             else
@@ -33,6 +44,14 @@ namespace Weapons
                 //Hit something else
                 Dispose();
             }
+        }
+
+        protected virtual void KnockbackCharacter(GameCharacter gameCharacter)
+        {
+            Rigidbody rigidbody = gameCharacter.GetComponent<Rigidbody>();
+            Vector3 force = transform.forward * projectileData.knockbackPower;
+            force.y = .25f;
+            rigidbody.AddForce(force, ForceMode.Impulse);
         }
 
         protected virtual IEnumerator DestroyWithDelay()

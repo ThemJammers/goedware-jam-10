@@ -10,6 +10,7 @@ namespace Player
         public bool Shooting { get; private set;}
 
         public bool IsGamepad { get; private set;}
+        public int WeaponSelection { get; private set;}
         private CustomInput _input;
 
         private void Awake()
@@ -34,6 +35,10 @@ namespace Player
             LookDirectionVector = _input.Player.LookDirection.ReadValue<Vector2>();
             Jumping = _input.Player.Jumping.ReadValue<float>() != 0;
             Shooting = _input.Player.Shoot.ReadValue<float>() != 0;
+            if (_input.Player.WeaponSelection.triggered)
+            {
+                WeaponSelection = (int)_input.Player.WeaponSelection.ReadValue<float>();
+            }
         }
 
         public void OnDeviceChanged(UnityEngine.InputSystem.PlayerInput input)

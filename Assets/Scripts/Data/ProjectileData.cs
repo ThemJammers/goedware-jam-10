@@ -10,6 +10,7 @@ namespace Data
         public float speed;
         public float lifetime = 5;
         public float shootingInterval = 1f;
+        public float knockbackPower = 1;
         public GameObject prefab;
     }
 }

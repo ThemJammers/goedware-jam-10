@@ -1,12 +1,15 @@
 using Core;
+using Interfaces;
 using UnityEngine;
 using Weapons;
 
 namespace Enemies
 {
-    public class Enemy : GameCharacter
+    public class Enemy : GameCharacter, ITurnable
     {
+        //Radius that defines how far away the player can be detected
         [SerializeField] private float detectionRadius = 5;
+        //Defines the speed in which the enemy can aim at the player
         [SerializeField] private float targetingSpeed = 1;
         protected Transform _playerTransform = null;
         protected Weapon _weapon;
@@ -21,13 +24,18 @@ namespace Enemies
         {
             if (_playerTransform != null)
             {
-                TargetPlayer(); 
-                ShootAtPlayer();
+                //Attack the player if it is in LoS
+                if (IsPlayerInSight())
+                {
+                    Turn(Vector2.zero); 
+                    ShootAtPlayer();
+                }
             }
         }
 
-        protected virtual void TargetPlayer()
+        public void Turn(Vector2 input)
         {
+            //Aim towards the player
             Quaternion targetRotation = Quaternion.LookRotation(_playerTransform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, targetingSpeed * Time.deltaTime);
         }
@@ -42,14 +50,45 @@ namespace Enemies
         
         protected virtual void ScanForPlayer()
         {
-            RaycastHit hit;
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, 1 << 7,
                 QueryTriggerInteraction.Ignore); 
             //Check if the player is within detectionRadius
             if (hitColliders.Length > 0)
             {
-                //Player detected within detectionRadius
                 _playerTransform = hitColliders[0].transform;
+                //Player detected within detectionRadius
+                //Additionally check if player is in LoS
+                if (IsPlayerInSight())
+                {
+                    CancelInvoke(nameof(ScanForPlayer));
+                }
+                else
+                {
+                    //Player is not in LoS -> Ignore it
+                    _playerTransform = null;
+                }
+            }
+        }
+
+        private bool IsPlayerInSight()
+        {
+            //Check if player is actually in enemies Line of sight
+            Vector3 directionToPlayer = _playerTransform.position - transform.position;
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, directionToPlayer, out hit, 20))
+            {
+                return hit.collider.CompareTag("Player");
+            }
+            return false;
+        }
+
+        public override void TakeDamage(int amount)
+        {
+            base.TakeDamage(amount);
+            //If enemy does not yet have aggro on the player -> now it does
+            if (_playerTransform == null)
+            {
+                _playerTransform = GameObject.FindWithTag("Player").transform;
                 CancelInvoke(nameof(ScanForPlayer));
             }
         }

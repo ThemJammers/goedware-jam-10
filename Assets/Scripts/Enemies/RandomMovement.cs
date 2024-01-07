@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Enemies
 {
@@ -55,6 +57,12 @@ namespace Enemies
 
             result = Vector3.zero;
             return false;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawWireSphere(centrePoint.position, range);
         }
     }
 }
