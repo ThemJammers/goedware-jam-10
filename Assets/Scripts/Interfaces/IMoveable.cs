@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-namespace ThemJammers.Interfaces
+namespace Interfaces
 {
     public interface IMovable
     {

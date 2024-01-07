@@ -1,6 +1,6 @@
-using ThemJammers.Player;
+using Player;
 
-namespace ThemJammers.Interfaces
+namespace Interfaces
 {
     public interface ICollectible
     {

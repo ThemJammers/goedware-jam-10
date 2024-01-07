@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ThemJammers.Data
+namespace Data
 {
     [System.Serializable]
     [CreateAssetMenu(fileName = "Projectile", menuName = "ScriptableObjects/CreateProjectile", order = 1)]

@@ -1,9 +1,7 @@
-using System;
-using ThemJammers.Interfaces;
+using Interfaces;
 using UnityEngine;
-using UnityEngine.Animations;
 
-namespace ThemJammers.Player
+namespace Player
 {
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovement : MonoBehaviour, IMovable, IJumpable, ITurnable

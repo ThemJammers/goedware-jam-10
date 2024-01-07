@@ -1,8 +1,8 @@
-using ThemJammers.Core;
-using ThemJammers.Weapons;
+using Core;
+using Weapons;
 using UnityEngine;
 
-namespace ThemJammers.Player
+namespace Player
 {
     public class PlayerController : GameCharacter
     {

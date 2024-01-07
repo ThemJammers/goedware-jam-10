@@ -1,9 +1,8 @@
-using System;
-using ThemJammers.Interfaces;
-using ThemJammers.Player;
+using Interfaces;
+using Player;
 using UnityEngine;
 
-namespace ThemJammers.Collectibles
+namespace Collectibles
 {
     [RequireComponent(typeof(Collider))]
     public class BasicCollectible : MonoBehaviour, ICollectible

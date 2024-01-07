@@ -1,10 +1,9 @@
 using System;
-using ThemJammers.Interfaces;
+using Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
-namespace ThemJammers.Core
+namespace Core
 {
     public abstract class GameCharacter : MonoBehaviour, IDamageable
     {

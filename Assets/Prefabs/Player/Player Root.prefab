@@ -156,7 +156,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8801652700791647995}
-        m_TargetAssemblyTypeName: ThemJammers.Player.PlayerInput, Assembly-CSharp
+        m_TargetAssemblyTypeName: Player.PlayerInput, Assembly-CSharp
         m_MethodName: OnDeviceChanged
         m_Mode: 0
         m_Arguments:

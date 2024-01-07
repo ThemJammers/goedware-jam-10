@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-namespace ThemJammers.Enemies
+namespace Enemies
 {
     [RequireComponent(typeof(RandomMovement))]
     public class PatrolingEnemy : Enemy

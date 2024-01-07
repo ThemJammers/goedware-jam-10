@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using ThemJammers.Data;
-using ThemJammers.Interfaces;
+using Data;
+using Interfaces;
 using UnityEngine;
 
-namespace ThemJammers.Weapons
+namespace Weapons
 {
     public class Weapon : MonoBehaviour, IShootable
     {

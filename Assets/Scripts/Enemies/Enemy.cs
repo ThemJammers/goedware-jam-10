@@ -1,9 +1,8 @@
-using System;
-using ThemJammers.Core;
-using ThemJammers.Weapons;
+using Core;
 using UnityEngine;
+using Weapons;
 
-namespace ThemJammers.Enemies
+namespace Enemies
 {
     public class Enemy : GameCharacter
     {

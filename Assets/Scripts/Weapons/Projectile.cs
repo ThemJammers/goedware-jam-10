@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections;
-using ThemJammers.Core;
-using ThemJammers.Data;
+﻿using System.Collections;
+using Core;
+using Data;
 using UnityEngine;
 
-namespace ThemJammers.Weapons
+namespace Weapons
 {
     [System.Serializable]
     [RequireComponent(typeof(Collider))]

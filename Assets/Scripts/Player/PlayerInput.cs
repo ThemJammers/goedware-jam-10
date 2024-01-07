@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-namespace ThemJammers.Player
+namespace Player
 {
     public class PlayerInput : MonoBehaviour
     {

@@ -1,9 +1,8 @@
-using System;
-using ThemJammers.Core;
+using Core;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ThemJammers.UI.Player
+namespace UI.Player
 {
     [RequireComponent(typeof(Image))]
     public class HealthIndicator : MonoBehaviour

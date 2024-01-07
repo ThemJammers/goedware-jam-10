@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ThemJammers.Enemies
+namespace Enemies
 {
     public class RandomMovement : MonoBehaviour
     {
