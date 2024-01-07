@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Railgun
   m_EditorClassIdentifier: 
   damage: 5
-  speed: 30
+  speed: 15
   lifetime: 5
   shootingInterval: 0.01
   prefab: {fileID: 5151914502977036383, guid: e7c71b9f4ed0b2440bee0c754a6b7b03, type: 3}
