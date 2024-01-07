@@ -34,7 +34,6 @@ namespace ThemJammers.UI.Player
         {
             //Update horizontal image fill of health bar as a value between 0-1 based on the characters health
             _image.fillAmount = ((float)_gameCharacter.Health / 100f);
-            Debug.Log($"{_gameCharacter.Health} => {_gameCharacter.Health / 100}");
         }
     }
 }

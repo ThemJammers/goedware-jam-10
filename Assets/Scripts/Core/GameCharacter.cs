@@ -13,7 +13,8 @@ namespace ThemJammers.Core
         public int Defense { get; set; } = 0;
         public virtual void Die()
         {
-            throw new NotImplementedException();
+            //TODO: Implement something actually cool
+            Destroy(gameObject);
         }
 
         public virtual void TakeDamage(int amount)

@@ -9,6 +9,7 @@ namespace ThemJammers.Player
         public Vector2 MovementVector { get; private set; }
         public Vector2 LookDirectionVector { get; private set; }
         public bool Jumping { get; private set;}
+        public bool Shooting { get; private set;}
 
         public bool IsGamepad { get; private set;}
         private CustomInput _input;
@@ -34,6 +35,7 @@ namespace ThemJammers.Player
             MovementVector = _input.Player.Movement.ReadValue<Vector2>();
             LookDirectionVector = _input.Player.LookDirection.ReadValue<Vector2>();
             Jumping = _input.Player.Jumping.ReadValue<float>() != 0;
+            Shooting = _input.Player.Shoot.ReadValue<float>() != 0;
         }
 
         public void OnDeviceChanged(UnityEngine.InputSystem.PlayerInput input)
