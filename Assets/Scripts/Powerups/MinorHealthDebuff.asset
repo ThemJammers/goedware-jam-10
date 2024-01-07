@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ff3c8849bced84aa136184394d4d39, type: 3}
   m_Name: MinorHealthDebuff
   m_EditorClassIdentifier: 
-  amount: 0
+  amount: 20
