@@ -1,10 +1,9 @@
 using System;
-using ThemJammers.Interfaces;
+using Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
-namespace ThemJammers.Core
+namespace Core
 {
     public abstract class GameCharacter : MonoBehaviour, IDamageable
     {
@@ -13,7 +12,8 @@ namespace ThemJammers.Core
         public int Defense { get; set; } = 0;
         public virtual void Die()
         {
-            throw new NotImplementedException();
+            //TODO: Implement something actually cool
+            Destroy(gameObject);
         }
 
         public virtual void TakeDamage(int amount)

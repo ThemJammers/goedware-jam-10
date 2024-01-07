@@ -1,7 +1,10 @@
 
 using UnityEngine;
 
-public interface ITurnable
+namespace Interfaces
 {
-    public void Turn(Vector2 input);
+    public interface ITurnable
+    {
+        public void Turn(Vector2 input);
+    }
 }

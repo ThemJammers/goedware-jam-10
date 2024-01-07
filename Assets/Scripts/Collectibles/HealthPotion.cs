@@ -1,7 +1,7 @@
-using ThemJammers.Player;
+using Player;
 using UnityEngine;
 
-namespace ThemJammers.Collectibles
+namespace Collectibles
 {
     public class HealthPotion : BasicCollectible
     {

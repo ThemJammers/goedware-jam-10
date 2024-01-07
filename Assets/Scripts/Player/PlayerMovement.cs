@@ -1,9 +1,7 @@
-using System;
-using ThemJammers.Interfaces;
+using Interfaces;
 using UnityEngine;
-using UnityEngine.Animations;
 
-namespace ThemJammers.Player
+namespace Player
 {
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovement : MonoBehaviour, IMovable, IJumpable, ITurnable
@@ -29,7 +27,7 @@ namespace ThemJammers.Player
                 return;
             }
             direction *= IsGrounded() ? movementSpeed : movementSpeed * 0.3f;
-            _rigidbody.AddForce(new Vector3(direction.x, 0, direction.y), ForceMode.Impulse);
+            transform.Translate(new Vector3(direction.x, 0, direction.y));
         }
         
         public void Turn(Vector2 input)

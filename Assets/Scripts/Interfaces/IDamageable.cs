@@ -1,4 +1,4 @@
-namespace ThemJammers.Interfaces
+namespace Interfaces
 {
     public interface IDamageable
     {
