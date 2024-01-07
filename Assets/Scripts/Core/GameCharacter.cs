@@ -8,8 +8,13 @@ namespace Core
     public abstract class GameCharacter : MonoBehaviour, IDamageable
     {
         public UnityEvent HealthChanged;
+        
         public int Health { get; set; } = 100;
+        
         public int Defense { get; set; } = 0;
+
+        public float BaseDamage { get; set; } = 1f;
+        
         public virtual void Die()
         {
             //TODO: Implement something actually cool
@@ -24,16 +29,12 @@ namespace Core
             int dmg = (int)(amount * dmgAbsorption);
             UpdateHealth(Health - dmg);
         }
-
-        public virtual void Heal(int amount)
-        {
-            UpdateHealth(Health + amount);
-        }
         
-        public virtual void RestoreHealth()
-        {
-            UpdateHealth(100);
-        }
+        public virtual void TakeTrueDamage(int amount) => UpdateHealth(Health - amount);
+
+        public virtual void Heal(int amount) => UpdateHealth(Health + amount);
+
+        public virtual void RestoreHealth() => UpdateHealth(100);
 
         public virtual void UpdateHealth(int newHealth)
         {

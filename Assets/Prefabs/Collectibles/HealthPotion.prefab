@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6319883892303612693}
   - component: {fileID: 1997371668954737284}
   - component: {fileID: 4528470636398151712}
-  - component: {fileID: 5879458196903884137}
+  - component: {fileID: 3133062821346770047}
   m_Layer: 0
   m_Name: HealthPotion
   m_TagString: Untagged
@@ -108,7 +108,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &5879458196903884137
+--- !u!114 &3133062821346770047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7858950787549747225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a20fa4c01fe9f419157b5bc3eef8ff, type: 3}
+  m_Script: {fileID: 11500000, guid: d7a77ccca32e0d1409c1fb173830737b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 20
+  powerupEffect: {fileID: 11400000, guid: 387028fd9c29a5142a280dfdc536932e, type: 2}

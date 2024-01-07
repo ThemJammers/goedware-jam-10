@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8299025166159678429}
   - component: {fileID: 6719024089364932019}
   - component: {fileID: 6964724411315151705}
-  - component: {fileID: 2692544509857571282}
+  - component: {fileID: 26100838618363649}
   m_Layer: 0
   m_Name: PoisonPotion
   m_TagString: Untagged
@@ -108,7 +108,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &2692544509857571282
+--- !u!114 &26100838618363649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1005321830077228765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea4f2308b146c134db4d9acc91d6c2e6, type: 3}
+  m_Script: {fileID: 11500000, guid: d7a77ccca32e0d1409c1fb173830737b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 20
+  powerupEffect: {fileID: 11400000, guid: 60fa56e3767079b48909000b6630d705, type: 2}
