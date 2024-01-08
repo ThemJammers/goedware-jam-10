@@ -7,18 +7,25 @@ namespace Weapons
 {
     public class Weapon : MonoBehaviour, IShootable
     {
-        [SerializeField] private Transform projectileSpawn;
-        [SerializeField] private ProjectileData projectileData;
+        [SerializeField] protected Transform projectileSpawn;
+        [SerializeField] protected ProjectileData projectileData;
 
         protected bool shootingLocked = false;
+        protected Projectile currentProjectile;
         public bool ShootingLocked => shootingLocked;
         
-        public void Shoot()
+        public virtual void Shoot()
         {
             if (shootingLocked) return;
             //TODO: Implement object pool and let it handle projectiles
-            Instantiate(projectileData.prefab, projectileSpawn.position, projectileSpawn.rotation);
+            InstantiateProjectile();
             StartCoroutine(WaitForInterval());
+        }
+
+        protected virtual void InstantiateProjectile()
+        {
+            GameObject projectile = Instantiate(projectileData.prefab, projectileSpawn.position, projectileSpawn.rotation);
+            currentProjectile = projectile.GetComponent<Projectile>();
         }
 
         public virtual void ChangeProjectile(ProjectileData newProjectile)

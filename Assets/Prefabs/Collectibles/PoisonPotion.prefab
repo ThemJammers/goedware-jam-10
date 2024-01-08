@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6719024089364932019}
   - component: {fileID: 6964724411315151705}
   - component: {fileID: 26100838618363649}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PoisonPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

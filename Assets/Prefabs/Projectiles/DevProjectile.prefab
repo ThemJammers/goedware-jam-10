@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2304703357679705315}
   - component: {fileID: 695156288179403366}
   - component: {fileID: -8300944019999887223}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DevProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e21b7d7b7c14775a6a8d041a5f31646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoLaunch: 1
   projectileData: {fileID: 11400000, guid: 6dfedcc7101c7544d87240113bfb0a1b, type: 2}
 --- !u!54 &-8300944019999887223
 Rigidbody:
