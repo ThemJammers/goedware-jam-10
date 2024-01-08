@@ -14,6 +14,9 @@ namespace Player
         
         private void Awake()
         {
+            //TODO: Shift this into gameManager
+            Application.targetFrameRate = 60;
+            
             _playerMovement = GetComponent<PlayerMovement>();
             _playerInput = GetComponent<PlayerInput>();
             _weapon = GetComponentInChildren<Weapon>();
