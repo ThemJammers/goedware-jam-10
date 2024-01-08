@@ -585,7 +585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &61359405
 Transform:
   m_ObjectHideFlags: 0
@@ -11049,14 +11049,6 @@ PrefabInstance:
       propertyPath: m_LayerOverridePriority
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2723955488518603845, guid: 9ad6366fd7cc59a449e898c2c5b44271, type: 3}
-      propertyPath: m_ImplicitTensor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4967357769698854120, guid: 9ad6366fd7cc59a449e898c2c5b44271, type: 3}
-      propertyPath: projectileData
-      value: 
-      objectReference: {fileID: 11400000, guid: d74e33128f7bce9489b141ff3fee3ef2, type: 2}
     - target: {fileID: 5040602812501103203, guid: 9ad6366fd7cc59a449e898c2c5b44271, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11250,6 +11242,10 @@ PrefabInstance:
     - target: {fileID: 2277198926606631305, guid: a45a50745a85d544e840631842087f2f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190227672257040758, guid: a45a50745a85d544e840631842087f2f, type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -28,11 +28,13 @@ namespace Weapons
 
         public virtual void LaunchProjectile()
         {
+            transform.SetParent(null);
             _rigidbody.AddForce(transform.forward * projectileData.speed, ForceMode.Impulse);
         }
 
         protected virtual void OnTriggerEnter(Collider other)
         {
+            if (GetComponentInParent<GameCharacter>() && other.gameObject.Equals(GetComponentInParent<GameCharacter>().gameObject)) return;
             if (other.CompareTag("Player") || other.CompareTag("Enemy"))
             {
                 if (active)
