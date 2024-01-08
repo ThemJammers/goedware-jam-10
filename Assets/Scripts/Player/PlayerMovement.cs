@@ -73,6 +73,7 @@ namespace Player
             //Cast a ray from mouse Position to an imaginary ground plane
             Ray ray = Camera.main.ScreenPointToRay(mousePosition);
             Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+            groundPlane.Translate(Vector3.down * transform.position.y);
             float rayDistance;
             //Check if the plane was hit
             if (groundPlane.Raycast(ray, out rayDistance))
