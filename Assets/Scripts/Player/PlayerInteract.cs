@@ -10,7 +10,8 @@ namespace Player
     [RequireComponent(typeof(SphereCollider))]
     public class PlayerInteract : MonoBehaviour
     {
-        private readonly ISet<(Collider, IInteractable)> interactablesInRange = new HashSet<(Collider, IInteractable)>();
+        private readonly ISet<(Collider, IInteractable)>
+            interactablesInRange = new HashSet<(Collider, IInteractable)>();
 
         private IInteractable closestInteractable;
 
@@ -25,7 +26,7 @@ namespace Player
 
         private void OnTriggerExit(Collider other)
         {
-            if (other == null) return; 
+            if (other == null) return;
             if (!other.transform.TryGetComponent(out IInteractable interactable)) return;
             // ReSharper disable once Unity.NoNullPropagation
             interactable.Hint?.Hide();
@@ -35,6 +36,8 @@ namespace Player
         private void Update()
         {
             UpdateClosestInteractable();
+
+            if (closestInteractable == null) return;
 
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -56,7 +59,7 @@ namespace Player
 
         private class DistanceComparer : IComparer<(Collider, IInteractable)>
         {
-            private Transform transform;
+            private readonly Transform transform;
 
             public DistanceComparer(Transform transform)
             {
