@@ -194,6 +194,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3b1335df-3a9b-46b5-992c-162b6edb3a78
     m_ActionName: Player/WeaponSelection[/Keyboard/1,/Keyboard/2,/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2f4313f9-7afb-476a-b016-4f0081711516
+    m_ActionName: Player/Melee[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: KeyboardMouse
   m_DefaultActionMap: Player
@@ -444,7 +448,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
