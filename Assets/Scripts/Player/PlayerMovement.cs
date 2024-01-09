@@ -91,11 +91,8 @@ namespace Player
             _modelTransform.LookAt(heightCorrectedPoint);
         }
 
-        public void Jump()
-        {
-            Jump(jumpPower);
-        }
-        
+        public void Jump() => Jump(jumpPower);
+
         public void Jump(float power)
         {
             //Only jump if player is not already in the air

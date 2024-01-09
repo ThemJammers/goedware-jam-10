@@ -22,7 +22,7 @@ namespace Player
 
         private void OnDestroy()
         {
-            _input.Disable();
+            _input?.Disable();
         }
 
         private void Update()
