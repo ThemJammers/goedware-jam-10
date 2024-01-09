@@ -47,10 +47,7 @@ namespace Player
             _playerWeaponController.SelectWeapon(_playerInput.WeaponSelection);
             if (_playerInput.Melee)
             {
-                if (meleeRoutine == null)
-                {
-                    meleeRoutine = StartCoroutine(TriggerMeleeAttack());
-                }
+                meleeRoutine ??= StartCoroutine(TriggerMeleeAttack());
             }
         }
 
