@@ -71,6 +71,15 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Melee"",
+                    ""type"": ""Button"",
+                    ""id"": ""2f4313f9-7afb-476a-b016-4f0081711516"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -337,6 +346,28 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
                     ""action"": ""WeaponSelection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8967681e-e213-4323-b587-da42763593a3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Melee"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8384e20d-f4b7-479f-9062-0bb62c972e61"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Melee"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -378,6 +409,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         m_Player_LookDirection = m_Player.FindAction("LookDirection", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_WeaponSelection = m_Player.FindAction("WeaponSelection", throwIfNotFound: true);
+        m_Player_Melee = m_Player.FindAction("Melee", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -444,6 +476,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_LookDirection;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_WeaponSelection;
+    private readonly InputAction m_Player_Melee;
     public struct PlayerActions
     {
         private @CustomInput m_Wrapper;
@@ -453,6 +486,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         public InputAction @LookDirection => m_Wrapper.m_Player_LookDirection;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @WeaponSelection => m_Wrapper.m_Player_WeaponSelection;
+        public InputAction @Melee => m_Wrapper.m_Player_Melee;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -477,6 +511,9 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             @WeaponSelection.started += instance.OnWeaponSelection;
             @WeaponSelection.performed += instance.OnWeaponSelection;
             @WeaponSelection.canceled += instance.OnWeaponSelection;
+            @Melee.started += instance.OnMelee;
+            @Melee.performed += instance.OnMelee;
+            @Melee.canceled += instance.OnMelee;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -496,6 +533,9 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             @WeaponSelection.started -= instance.OnWeaponSelection;
             @WeaponSelection.performed -= instance.OnWeaponSelection;
             @WeaponSelection.canceled -= instance.OnWeaponSelection;
+            @Melee.started -= instance.OnMelee;
+            @Melee.performed -= instance.OnMelee;
+            @Melee.canceled -= instance.OnMelee;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -538,5 +578,6 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         void OnLookDirection(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnWeaponSelection(InputAction.CallbackContext context);
+        void OnMelee(InputAction.CallbackContext context);
     }
 }
