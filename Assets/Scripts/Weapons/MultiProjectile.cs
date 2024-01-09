@@ -10,7 +10,7 @@ namespace Weapons
         [SerializeField] int projectileCount = 3;
         [SerializeField] private GameObject shellPrefab;
         
-        protected override void LaunchProjectile()
+        public override void LaunchProjectile()
         {
             Quaternion defaultRotation = transform.rotation;
             //Fire first projectile from the left, e.g. 90° spread angle, start at -45°

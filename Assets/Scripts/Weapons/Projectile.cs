@@ -10,6 +10,7 @@ namespace Weapons
     [RequireComponent(typeof(Collider))]
     public class Projectile : MonoBehaviour
     {
+        [SerializeField] protected bool autoLaunch = false;
         [SerializeField] protected ProjectileData projectileData;
         private Rigidbody _rigidbody;
         private bool active = true;
@@ -22,16 +23,18 @@ namespace Weapons
 
         protected virtual void Start()
         {
-            LaunchProjectile();
+            if(autoLaunch) LaunchProjectile();
         }
 
-        protected virtual void LaunchProjectile()
+        public virtual void LaunchProjectile()
         {
+            transform.SetParent(null);
             _rigidbody.AddForce(transform.forward * projectileData.speed, ForceMode.Impulse);
         }
 
         protected virtual void OnTriggerEnter(Collider other)
         {
+            if (GetComponentInParent<GameCharacter>() && other.gameObject.Equals(GetComponentInParent<GameCharacter>().gameObject)) return;
             if (other.CompareTag("Player") || other.CompareTag("Enemy"))
             {
                 if (active)
@@ -55,7 +58,7 @@ namespace Weapons
         {
             Rigidbody rigidbody = gameCharacter.GetComponent<Rigidbody>();
             Vector3 force = transform.forward * projectileData.knockbackPower;
-            force.y = .25f;
+            //force.y = .25f;
             rigidbody.AddForce(force, ForceMode.Impulse);
         }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4578260959570861929}
   - component: {fileID: 2304703357679705315}
   - component: {fileID: -2039210829645205896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DevProjectile_Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6052a9822d91b648bc57bf14062d5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoLaunch: 1
   projectileData: {fileID: 11400000, guid: c7ebb495f3525914885e9adbf094d727, type: 2}
   spreadAngle: 45
   projectileCount: 5

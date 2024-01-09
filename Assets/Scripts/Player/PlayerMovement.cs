@@ -11,8 +11,11 @@ namespace Player
         [SerializeField] private float turningSensitivity;
         [SerializeField] private PlayerInput _playerInput;
 
+        private float _walkLookAngle;
         private Transform _modelTransform;
         private Rigidbody _rigidbody;
+
+        public float WalkLookAngle => _walkLookAngle;
 
         private void Awake()
         {
@@ -28,6 +31,7 @@ namespace Player
             }
             direction *= IsGrounded() ? movementSpeed : movementSpeed * 0.3f;
             transform.Translate(new Vector3(direction.x, 0, direction.y));
+            CalculateWalkLookAngle(direction);
         }
         
         public void Turn(Vector2 input)
@@ -40,6 +44,11 @@ namespace Player
             {
                 TurnWithMouse(input);
             }
+        }
+
+        private void CalculateWalkLookAngle(Vector2 walkDirection)
+        {
+            _walkLookAngle = Vector3.Angle(walkDirection, _modelTransform.forward);
         }
 
         private void TurnWithGamepad(Vector2 input)
@@ -64,6 +73,7 @@ namespace Player
             //Cast a ray from mouse Position to an imaginary ground plane
             Ray ray = Camera.main.ScreenPointToRay(mousePosition);
             Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+            groundPlane.Translate(Vector3.down * transform.position.y);
             float rayDistance;
             //Check if the plane was hit
             if (groundPlane.Raycast(ray, out rayDistance))

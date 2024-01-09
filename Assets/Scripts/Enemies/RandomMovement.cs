@@ -28,6 +28,7 @@ namespace Enemies
         {
             _move = false;
             agent.isStopped = true;
+            agent.enabled = false;
         }
     
         void Update()
