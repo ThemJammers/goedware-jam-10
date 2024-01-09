@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Blood
+    second: {fileID: 2100000, guid: 529f33229365fbb48a93789ffad37ac9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Char_Eyes_Black
     second: {fileID: 2100000, guid: 319263af7189c664997ebdd155e31c43, type: 2}
   - first:
@@ -37,6 +42,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Emissive_Red
+    second: {fileID: 2100000, guid: 116590c3c88bebf488b36db1032664dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Metal_Basic
     second: {fileID: 2100000, guid: c6e96fb95d5377242b64b626dfe07e41, type: 2}
   - first:
@@ -44,6 +54,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Metal_Dark
     second: {fileID: 2100000, guid: 20e19fb126bd8ea46a6aae8a59c8e411, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_Basic
+    second: {fileID: 2100000, guid: 56fcd1ccf4d87454c841d5e16c7bbf23, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -115,6 +130,35 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Melee
+      takeName: Scene
+      internalID: 723096430288179899
+      firstFrame: 100
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
