@@ -17,5 +17,10 @@ namespace Player
             animator.SetBool("Backwards", direction < 0);
             animator.SetBool("IsMoving", true);
         }
+
+        public void PlayMelee()
+        {
+            animator.SetBool("Melee", true);
+        }
     }
 }

@@ -18,7 +18,6 @@ namespace Weapons
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            StartCoroutine(DestroyWithDelay());
         }
 
         protected virtual void Start()
@@ -30,6 +29,7 @@ namespace Weapons
         {
             transform.SetParent(null);
             _rigidbody.AddForce(transform.forward * projectileData.speed, ForceMode.Impulse);
+            StartCoroutine(DestroyWithDelay());
         }
 
         protected virtual void OnTriggerEnter(Collider other)
