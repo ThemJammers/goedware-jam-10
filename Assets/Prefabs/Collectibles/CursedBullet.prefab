@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4528470636398151712}
   - component: {fileID: 7299173435465878649}
   m_Layer: 9
-  m_Name: SpectralEdge
+  m_Name: CursedBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
