@@ -2,6 +2,7 @@ using System;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
+using Weapons;
 
 namespace Core
 {

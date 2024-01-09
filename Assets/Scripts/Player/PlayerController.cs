@@ -14,11 +14,12 @@ namespace Player
         private PlayerWeaponController _playerWeaponController;
         private PlayerAnimations _playerAnimations;
         private Coroutine meleeRoutine = null;
+        
         private void Awake()
         {
             //TODO: Shift this into gameManager
             Application.targetFrameRate = 60;
-            
+
             _playerMovement = GetComponent<PlayerMovement>();
             _playerInput = GetComponent<PlayerInput>();
             _weapon = GetComponentInChildren<Weapon>();
@@ -42,6 +43,7 @@ namespace Player
             {
                 if (_playerInput.Shooting) _weapon.Shoot();
             }
+
             _playerWeaponController.SelectWeapon(_playerInput.WeaponSelection);
             if (_playerInput.Melee)
             {

@@ -269,7 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6198118854305318923}
   - component: {fileID: 3657255754960188154}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: InteractionHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

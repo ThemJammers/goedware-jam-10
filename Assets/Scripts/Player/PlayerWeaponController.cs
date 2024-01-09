@@ -13,5 +13,7 @@ namespace Weapons
         {
             playerWeapon.ChangeProjectile(projectiles[weaponId]);
         }
+
+        public void AddProjectile(ProjectileData projectile) => projectiles.Add(projectile);
     }
 }

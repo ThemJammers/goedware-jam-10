@@ -1,10 +1,18 @@
 using Core;
+using Player;
 using UnityEngine;
+using Weapons;
 
 namespace Powerups
 {
-    public abstract class PowerupEffect : ScriptableObject
+    public class PowerupEffect : ScriptableObject
     {
-        public abstract void Apply(GameCharacter character);
+        public virtual void Apply(GameCharacter character)
+        {
+        }
+
+        public virtual void Apply(PlayerWeaponController playerWeaponController)
+        {
+        }
     }
 }

@@ -1,10 +1,9 @@
+using System;
 using Player;
 
 namespace Interfaces
 {
-    public interface ICollectible
+    public interface ICollectible : IDisposable
     {
-        public void Collect(PlayerController playerController);
-        public void Dispose();
     }
 }

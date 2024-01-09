@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Interfaces;
+using UI;
 using UnityEngine;
 
 namespace Player
@@ -18,6 +19,7 @@ namespace Player
         {
             if (other == null) return;
             if (!other.transform.TryGetComponent(out IInteractable interactable)) return;
+
             // ReSharper disable once Unity.NoNullPropagation
             interactable.Hint?.Show();
             interactablesInRange.Add((other, interactable));

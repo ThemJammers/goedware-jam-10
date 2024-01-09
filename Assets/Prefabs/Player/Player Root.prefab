@@ -218,8 +218,6 @@ MonoBehaviour:
   playerWeapon: {fileID: 3691872976717612524}
   projectiles:
   - {fileID: 11400000, guid: 6dfedcc7101c7544d87240113bfb0a1b, type: 2}
-  - {fileID: 11400000, guid: 69109553ba585a14ea273145c14a51d3, type: 2}
-  - {fileID: 11400000, guid: d74e33128f7bce9489b141ff3fee3ef2, type: 2}
 --- !u!114 &380418685722075345
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,13 @@
 using Interfaces;
+using JetBrains.Annotations;
 using Player;
 using Powerups;
 using UnityEngine;
+using UnityEngine.Localization.PropertyVariants.TrackedObjects;
+using UnityEngine.Serialization;
+using Weapons;
+
+// ReSharper disable Unity.NoNullPropagation
 
 namespace Collectibles
 {
@@ -14,15 +20,24 @@ namespace Collectibles
         {
             if (other.CompareTag("Player"))
             {
-                var playerController = other.GetComponent<PlayerController>();
-                Collect(playerController);
+                Collect(other);
             }
         }
 
-        public virtual void Collect(PlayerController playerController)
+        public virtual void Collect(Collider player)
         {
+            var playerController = player.GetComponent<PlayerController>();
+            var playerWeaponController = player.GetComponent<PlayerWeaponController>();
+
             powerupEffect.Apply(playerController);
+            powerupEffect.Apply(playerWeaponController);
+            
             Dispose();
+        }
+
+        public void Collect(PlayerController playerController)
+        {
+            throw new System.NotImplementedException();
         }
 
         public virtual void Dispose()
