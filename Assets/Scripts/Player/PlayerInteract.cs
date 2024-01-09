@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Interfaces;
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Player
@@ -10,7 +9,7 @@ namespace Player
     [RequireComponent(typeof(SphereCollider))]
     public class PlayerInteract : MonoBehaviour
     {
-        private readonly ISet<(Collider, IInteractable)>
+        private ISet<(Collider, IInteractable)>
             interactablesInRange = new HashSet<(Collider, IInteractable)>();
 
         private IInteractable closestInteractable;
@@ -52,8 +51,15 @@ namespace Player
                 return;
             }
 
-            var sorted = interactablesInRange.ToList();
+            var sorted = interactablesInRange.Where(x => x.Item1 != null && x.Item2 != null).ToList();
             sorted.Sort(new DistanceComparer(transform));
+            interactablesInRange = sorted.ToHashSet();
+
+            if (interactablesInRange.Count == 0)
+            {
+                return;
+            }
+
             closestInteractable = sorted.First().Item2;
         }
 
