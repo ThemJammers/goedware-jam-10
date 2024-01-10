@@ -43,11 +43,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2a63126902b295341a8810f2d7a5b12e, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 0.187
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -141,3 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e1073fe00580f4cbe7e40a84ba8f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicRefs: {fileID: 11400000, guid: 1fe2d67f6c79bbb40a5caff8fd71092d, type: 2}

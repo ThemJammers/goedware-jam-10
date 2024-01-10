@@ -3,7 +3,7 @@ using UnityEngine.Serialization;
 
 namespace Sounds
 {
-    [CreateAssetMenu()]
+    [CreateAssetMenu]
     public class AudioClipRefs : ScriptableObject
     {
         [FormerlySerializedAs("footstep")] public AudioClip[] footsteps;

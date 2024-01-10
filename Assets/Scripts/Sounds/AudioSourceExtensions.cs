@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Sounds
 {
     public static class AudioSourceExtensions
     {
-        public static void SetRandomClipFrom(this AudioSource audioSource, AudioClip[] clips)
+        public static void SetRandomClipFrom(this AudioSource audioSource, IList<AudioClip> clips)
         {
-            audioSource.clip = clips[Random.Range(0, clips.Length)];
+            audioSource.clip = clips[Random.Range(0, clips.Count)];
         }
     }
 }
