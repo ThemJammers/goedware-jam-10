@@ -1,19 +1,32 @@
 using System.Collections.Generic;
 using Data;
 using UnityEngine;
+using UnityEngine.Events;
+using Weapons;
 
-namespace Weapons
+namespace Player
 {
     public class PlayerWeaponController : MonoBehaviour
     {
         [SerializeField] private Weapon playerWeapon;
         [SerializeField] private List<ProjectileData> projectiles;
-        
-        public void SelectWeapon(int weaponId)
+
+        public UnityEvent onProjectileAdded;
+
+        public void SelectWeapon(int weaponIndex)
         {
-            playerWeapon.ChangeProjectile(projectiles[weaponId]);
+            if (weaponIndex < 0 || weaponIndex > projectiles.Count - 1) return; // No such weapon, do nothing
+            
+            var projectile = projectiles[weaponIndex];
+            playerWeapon.ChangeProjectile(projectile);
         }
 
-        public void AddProjectile(ProjectileData projectile) => projectiles.Add(projectile);
+        public void AddProjectile(ProjectileData projectile)
+        {
+            projectiles.Add(projectile);
+            onProjectileAdded?.Invoke();
+        }
+
+        public Weapon Weapon => playerWeapon;
     }
 }

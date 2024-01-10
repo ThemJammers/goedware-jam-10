@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e633c151b374ea34cac6418172c9dd1f, type: 3}
+  m_Name: AudioClipRefs
+  m_EditorClassIdentifier: 
+  footsteps:
+  - {fileID: 8300000, guid: ebe4448d94d6db64c8d335938caf1dab, type: 3}
+  - {fileID: 8300000, guid: 85bee02fe2c401b42a51d701e22643a0, type: 3}
+  repeaterFire:
+  - {fileID: 8300000, guid: cd5a179722ba43a4a84a51720e85bc02, type: 3}
+  - {fileID: 8300000, guid: 32d31fd87f93c5347b7ab0988b670562, type: 3}
+  shotgunFire:
+  - {fileID: 8300000, guid: ed87246fd24c5bf40bd1e6ff865b62c4, type: 3}
+  - {fileID: 8300000, guid: 252bef23982e0754d99a26ab521935ab, type: 3}
+  railgunFire:
+  - {fileID: 8300000, guid: 4cd74a97c451d4e4695e870edc214c09, type: 3}
+  weaponPickup:
+  - {fileID: 8300000, guid: f349ce40b7aa88d4aa6712bbed5ab3b3, type: 3}

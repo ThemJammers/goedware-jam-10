@@ -1,12 +1,21 @@
+using System;
 using System.Collections;
 using Core;
 using Weapons;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Player
 {
     public class PlayerController : GameCharacter
     {
+        private enum MovementState
+        {
+            Moving,
+            Idle
+        }
+
         private PlayerMovement _playerMovement;
         private PlayerInput _playerInput;
         private Weapon _weapon;
@@ -14,7 +23,12 @@ namespace Player
         private PlayerWeaponController _playerWeaponController;
         private PlayerAnimations _playerAnimations;
         private Coroutine meleeRoutine = null;
+
+        public UnityEvent onCharacterMoving;
+        public UnityEvent onCharacterIdle;
         
+        private MovementState _movementState = MovementState.Idle;
+
         private void Awake()
         {
             //TODO: Shift this into gameManager
@@ -57,10 +71,15 @@ namespace Player
             {
                 int movementDirection = _playerMovement.WalkLookAngle > 90 ? -1 : 1;
                 _playerAnimations.PlayMove(movementDirection);
+
+                if (_movementState != MovementState.Moving) onCharacterMoving?.Invoke();
+                _movementState = MovementState.Moving;
             }
             else
             {
                 _playerAnimations.PlayIdle();
+                if (_movementState != MovementState.Idle) onCharacterIdle?.Invoke();
+                _movementState = MovementState.Idle;
             }
         }
 
