@@ -8,13 +8,14 @@ using Random = UnityEngine.Random;
 
 namespace Sounds
 {
-    [RequireComponent(typeof(AudioSource), typeof(AudioSource))]
+    [RequireComponent(typeof(AudioSource), typeof(AudioSource), typeof(AudioSource))]
     public class CharacterSoundManager : SoundManager
     {
         [SerializeField] private AudioClipRefs audioClipRefs;
 
         private AudioSource footstepsAudioSource;
         private AudioSource weaponFireAudioSource;
+        private AudioSource oneshotAudioSource;
 
         private PlayerController playerController;
         private PlayerWeaponController playerWeaponController;
@@ -27,6 +28,7 @@ namespace Sounds
             var audioSourceComponents = GetComponents<AudioSource>();
             footstepsAudioSource = audioSourceComponents[0];
             weaponFireAudioSource = audioSourceComponents[1];
+            oneshotAudioSource = audioSourceComponents[2];
             weaponFireAudioSource.loop = false;
 
             // TODO: Implement grass walking sounds (footsteps[1])
@@ -36,7 +38,7 @@ namespace Sounds
             playerController.onCharacterIdle.AddListener(() => footstepsAudioSource.Stop());
 
             playerWeaponController.onProjectileAdded.AddListener(() =>
-                PlayClipAt(audioClipRefs.weaponPickup, transform.position));
+                oneshotAudioSource.PlayOneShot(audioClipRefs.weaponPickup[0]));
             playerWeaponController.Weapon.onProjectileChanged.AddListener(OnWeaponProjectileChanged);
             playerWeaponController.Weapon.onShoot.AddListener(() => weaponFireAudioSource.Play());
         }

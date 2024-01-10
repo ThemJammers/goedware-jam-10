@@ -20,7 +20,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 32d31fd87f93c5347b7ab0988b670562, type: 3}
   shotgunFire:
   - {fileID: 8300000, guid: ed87246fd24c5bf40bd1e6ff865b62c4, type: 3}
-  - {fileID: 8300000, guid: 252bef23982e0754d99a26ab521935ab, type: 3}
   railgunFire:
   - {fileID: 8300000, guid: 4cd74a97c451d4e4695e870edc214c09, type: 3}
   weaponPickup:
