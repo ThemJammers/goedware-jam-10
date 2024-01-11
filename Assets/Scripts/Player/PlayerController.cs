@@ -91,10 +91,8 @@ namespace Player
         private IEnumerator TriggerMeleeAttack()
         {
             _weapon.gameObject.SetActive(false);
-            _meleeWeapon.gameObject.SetActive(true);
             _playerAnimations.PlayMelee();
             yield return new WaitForSecondsRealtime(.5f);
-            _meleeWeapon.gameObject.SetActive(false);
             _weapon.gameObject.SetActive(true);
             meleeRoutine = null;
         }

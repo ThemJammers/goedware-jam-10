@@ -12,6 +12,7 @@ namespace Enemies
         [SerializeField] private float detectionRadius = 5;
         //Defines the speed in which the enemy can aim at the player
         [SerializeField] private float targetingSpeed = 1;
+        [SerializeField] private Transform modelTransform;
         [SerializeField] protected EnemyTier tier = EnemyTier.Tier1;
         protected Transform _playerTransform = null;
         protected Weapon _weapon;
@@ -39,7 +40,7 @@ namespace Enemies
         {
             //Aim towards the player
             Quaternion targetRotation = Quaternion.LookRotation(_playerTransform.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, targetingSpeed * Time.deltaTime);
+            modelTransform.rotation = Quaternion.Slerp(modelTransform.rotation, targetRotation, targetingSpeed * Time.deltaTime);
         }
 
         protected virtual void ShootAtPlayer()
@@ -77,7 +78,7 @@ namespace Enemies
             //Check if player is actually in enemies Line of sight
             Vector3 directionToPlayer = _playerTransform.position - transform.position;
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, directionToPlayer, out hit, 20))
+            if (Physics.Raycast(transform.position, directionToPlayer, out hit, 20, 1 << 7))
             {
                 return hit.collider.CompareTag("Player");
             }

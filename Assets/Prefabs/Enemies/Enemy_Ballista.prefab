@@ -100,8 +100,9 @@ MonoBehaviour:
   HealthChanged:
     m_PersistentCalls:
       m_Calls: []
-  detectionRadius: 4
+  detectionRadius: 6
   targetingSpeed: 3
+  modelTransform: {fileID: 3058120230792141887}
   tier: 0
 --- !u!65 &1823209864042166654
 BoxCollider:
@@ -308,6 +309,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpawn: {fileID: 7028940939593353321}
   projectileData: {fileID: 11400000, guid: 63a5d5ad3438c8d4e9c38a6cbe46cdbd, type: 2}
+  onProjectileChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onShoot:
+    m_PersistentCalls:
+      m_Calls: []
   animator: {fileID: 6531947890037175296}
 --- !u!1001 &6314021075113702504
 PrefabInstance:
