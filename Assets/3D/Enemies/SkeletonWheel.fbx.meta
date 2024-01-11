@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a29678d772a7d81459d395a0e4ea6d6a
+guid: 078c5a6eb355f0446988af0b2b0ca5af
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -12,23 +12,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Char_Eyes_Black
-    second: {fileID: 2100000, guid: 319263af7189c664997ebdd155e31c43, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Char_Eyes_White
+      name: Bone
     second: {fileID: 2100000, guid: 3ac46265dd400a049bb4b72cc3b9f4a5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Char_Fabric
-    second: {fileID: 2100000, guid: d80a91ca9f9ad774bbae7d12fe9016c5, type: 2}
+      name: Char_Eyes_White
+    second: {fileID: 2100000, guid: 52c557d36b6898a42a69d1a6a921d29a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Emissive_Red
     second: {fileID: 2100000, guid: 116590c3c88bebf488b36db1032664dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Basic
+    second: {fileID: 2100000, guid: c6e96fb95d5377242b64b626dfe07e41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_Basic
+    second: {fileID: 2100000, guid: 56fcd1ccf4d87454c841d5e16c7bbf23, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -58,7 +63,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Hover
+      name: Roll
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 0
@@ -71,35 +76,6 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Attack
-      takeName: Scene
-      internalID: -1609281748187839663
-      firstFrame: 60
-      lastFrame: 70
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
