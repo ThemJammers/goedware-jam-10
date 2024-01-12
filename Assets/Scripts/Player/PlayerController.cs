@@ -22,6 +22,7 @@ namespace Player
         private Weapon _weapon;
         private PlayerWeaponController _playerWeaponController;
         private PlayerAnimations _playerAnimations;
+        private PlayerInteract _playerInteract;
         private Coroutine meleeRoutine = null;
 
         public UnityEvent onCharacterMoving;
@@ -39,6 +40,7 @@ namespace Player
             _weapon = GetComponentInChildren<Weapon>();
             _playerWeaponController = GetComponentInChildren<PlayerWeaponController>();
             _playerAnimations = GetComponent<PlayerAnimations>();
+            _playerInteract = GetComponentInChildren<PlayerInteract>();
         }
 
         private void Update()
@@ -52,6 +54,7 @@ namespace Player
             _playerMovement.Move(_playerInput.MovementVector);
             _playerMovement.Turn(_playerInput.LookDirectionVector);
             if (_playerInput.Jumping) _playerMovement.Jump();
+            if (_playerInput.Interact) _playerInteract.Interact();
             _playerWeaponController.SelectWeapon(_playerInput.WeaponSelection);
             if (_playerInput.Melee)
             {

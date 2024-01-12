@@ -65,7 +65,6 @@ namespace Sacrifices
 
         public void SetSacrificeEffect(SacrificeEffect effect)
         {
-            Debug.Log(effect.name);
             _activeEffect = effect;
             UpdateTooltips();
         }

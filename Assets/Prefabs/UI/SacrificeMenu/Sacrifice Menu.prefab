@@ -2144,10 +2144,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
@@ -2155,7 +2159,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6540932634607731595}
     - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 219619138698974716}
+    - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
@@ -2163,11 +2175,23 @@ PrefabInstance:
       value: ApplySacrificeEffect
       objectReference: {fileID: 0}
     - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Hide
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Sacrifices.SacrificeController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: halbautomaten.UnityTools.UiTools.UiPanel, Assembly-CSharp-firstpass
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706529968341939119, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6912008217552497129, guid: 83654414bfe66254daba8ee64aa283d8, type: 3}

@@ -37,13 +37,12 @@ namespace Player
         private void Update()
         {
             UpdateClosestInteractable();
+        }
 
+        public void Interact()
+        {
             if (closestInteractable == null) return;
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                closestInteractable.Interact();
-            }
+            closestInteractable.Interact();
         }
 
         private void UpdateClosestInteractable()
