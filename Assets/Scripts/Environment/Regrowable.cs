@@ -46,14 +46,12 @@ namespace Environment
         {
             if (growCoroutine != null) StopCoroutine(growCoroutine);
             growCoroutine = StartCoroutine(nameof(Grow));
-            Debug.Log("Start");
         }
 
         private void StopGrowing()
         {
             if (growCoroutine != null) StopCoroutine(growCoroutine);
             growCoroutine = null;
-            Debug.Log("Stop");
         }
 
         private void Start()
