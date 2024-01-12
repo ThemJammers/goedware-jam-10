@@ -10,23 +10,24 @@ namespace Environment
     {
         [SerializeField] private int touchDamage = 5;
 
-        [CanBeNull] private GameCharacter touchingPlayer = null;
+        [CanBeNull] private GameCharacter _touchingPlayer = null;
+        
         private const float DamageIntervalSeconds = 0.3f;
-        [CanBeNull] private Coroutine damageOverTime = null;
+        [CanBeNull] private Coroutine _damageOverTime = null;
 
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player")) return;
 
-            touchingPlayer = other.GetComponent<GameCharacter>();
-            damageOverTime = StartCoroutine(nameof(TakeDamageOverTime));
+            _touchingPlayer = other.GetComponent<GameCharacter>();
+            _damageOverTime = StartCoroutine(nameof(TakeDamageOverTime));
         }
 
         private IEnumerator TakeDamageOverTime()
         {
             while (true)
             {
-                touchingPlayer!.TakeDamage(touchDamage);
+                _touchingPlayer!.TakeDamage(touchDamage);
                 yield return new WaitForSeconds(DamageIntervalSeconds);
             }
             // ReSharper disable once IteratorNeverReturns
@@ -34,9 +35,9 @@ namespace Environment
 
         public void Reset()
         {
-            touchingPlayer = null;
-            if (damageOverTime != null) StopCoroutine(damageOverTime);
-            damageOverTime = null;
+            _touchingPlayer = null;
+            if (_damageOverTime != null) StopCoroutine(_damageOverTime);
+            _damageOverTime = null;
         }
 
         private void OnTriggerExit(Collider other)

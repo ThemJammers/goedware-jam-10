@@ -11,7 +11,7 @@ namespace Environment
         public UnityEvent<GameCharacter> onPlayerEnter;
         public UnityEvent onPlayerExit;
 
-        private SphereCollider growDistanceCollider;
+        private SphereCollider _growDistanceCollider;
 
         public float PlayerVicinityRadius
         {
@@ -20,8 +20,8 @@ namespace Environment
 
         private void Awake()
         {
-            growDistanceCollider = GetComponent<SphereCollider>();
-            growDistanceCollider.isTrigger = true;
+            _growDistanceCollider = GetComponent<SphereCollider>();
+            _growDistanceCollider.isTrigger = true;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -32,6 +32,9 @@ namespace Environment
             }
         }
 
-        private void OnTriggerExit(Collider other) => onPlayerExit?.Invoke();
+        private void OnTriggerExit(Collider other)
+        {
+            onPlayerExit?.Invoke();
+        }
     }
 }
