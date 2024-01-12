@@ -1,5 +1,6 @@
 using System;
 using Core;
+using Environment;
 using Sacrifices;
 using UnityEngine;
 
@@ -18,6 +19,11 @@ namespace Weapons
                 GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
                 gameCharacter.TakeDamage(damage, DamageType.Melee);
                 KnockbackCharacter(gameCharacter);
+            }
+
+            if (other.TryGetComponent<Regrowable>(out var regrowable))
+            {
+                regrowable.CutDown();
             }
         }
         

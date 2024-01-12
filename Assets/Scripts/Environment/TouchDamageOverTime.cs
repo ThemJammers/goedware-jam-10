@@ -9,7 +9,7 @@ namespace Environment
     public class TouchDamageOverTime : MonoBehaviour
     {
         [SerializeField] private int touchDamage = 5;
-        
+
         [CanBeNull] private GameCharacter touchingPlayer = null;
         private const float DamageIntervalSeconds = 0.3f;
         [CanBeNull] private Coroutine damageOverTime = null;
@@ -32,13 +32,17 @@ namespace Environment
             // ReSharper disable once IteratorNeverReturns
         }
 
-        private void OnTriggerExit(Collider other)
+        public void Reset()
         {
-            if (!other.CompareTag("Player")) return;
-
             touchingPlayer = null;
             if (damageOverTime != null) StopCoroutine(damageOverTime);
             damageOverTime = null;
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (!other.CompareTag("Player")) return;
+            Reset();
         }
     }
 }

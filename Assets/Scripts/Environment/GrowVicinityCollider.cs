@@ -15,7 +15,7 @@ namespace Environment
 
         public float PlayerVicinityRadius
         {
-            set => growDistanceCollider.radius = value;
+            set => GetComponent<SphereCollider>().radius = value;
         }
 
         private void Awake()

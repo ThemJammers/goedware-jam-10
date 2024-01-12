@@ -3,6 +3,7 @@ using System.Collections;
 using Core;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Environment
 {
@@ -16,9 +17,13 @@ namespace Environment
         [SerializeField] private Mesh[] meshSteps;
         [SerializeField] private float playerVicinityRadius = 20f;
 
+        // Events
+        public UnityEvent<int, int> onCutDown;
+
         // Components
         private MeshFilter meshFilter;
         private MeshCollider meshCollider;
+        [CanBeNull] private TouchDamageOverTime touchDamageOverTime;
 
         // Internals
         private int stepIdx = 0;
@@ -29,6 +34,10 @@ namespace Environment
         {
             meshFilter = GetComponent<MeshFilter>();
             meshCollider = GetComponent<MeshCollider>();
+            touchDamageOverTime = GetComponentInChildren<TouchDamageOverTime>();
+
+            // Initialize
+            SetMeshIdx(0);
 
             var growVicinityCollider = GetComponentInChildren<GrowVicinityCollider>();
             growVicinityCollider.PlayerVicinityRadius = playerVicinityRadius;
@@ -36,10 +45,17 @@ namespace Environment
             growVicinityCollider.onPlayerExit.AddListener(StartGrowing);
         }
 
-        private void SetMesh(Mesh mesh)
+        private void SetMeshIdx(int idx)
         {
+            var mesh = meshSteps[0];
             meshFilter.mesh = mesh;
             meshCollider.sharedMesh = mesh;
+
+            if (touchDamageOverTime != null && idx == 0)
+            {
+                // A little hack that's needed because the OnTriggerExit of the sub game object won't be called when the mesh is changed to null
+                touchDamageOverTime.Reset();
+            }
         }
 
         private void StartGrowing()
@@ -61,14 +77,24 @@ namespace Environment
 
         private IEnumerator Grow()
         {
-            while (stepIdx < meshSteps.Length)
+            while (stepIdx < meshSteps.Length - 1)
             {
                 yield return new WaitForSeconds(growStepSeconds);
 
-                SetMesh(meshSteps[stepIdx]);
                 stepIdx += 1;
+                SetMeshIdx(stepIdx);
             }
         }
 
+        public void CutDown()
+        {
+            if (stepIdx <= 0) return; // Shouldn't happen as there is no mesh to collide with
+
+            stepIdx -= 1;
+            Debug.Log($"Cut down to {stepIdx}");
+            SetMeshIdx(stepIdx);
+
+            onCutDown.Invoke(stepIdx, meshSteps.Length);
+        }
     }
 }
