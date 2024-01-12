@@ -7,8 +7,9 @@ namespace UI
     {
         [SerializeField] private Animator animator;
 
-        private void Awake()
+        public override void Awake()
         {
+            base.Awake();
             if(!animator) animator = GetComponent<Animator>();
         }
 
