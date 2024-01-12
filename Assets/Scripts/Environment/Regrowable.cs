@@ -5,6 +5,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace Environment
 {
@@ -14,7 +15,9 @@ namespace Environment
     public class Regrowable : MonoBehaviour
     {
         // Fields
-        [SerializeField] private int growStepSeconds = 60;
+        [FormerlySerializedAs("growStepSeconds")] [SerializeField]
+        private int averageGrowStepSeconds = 60;
+
         [SerializeField] private Mesh[] meshSteps;
         [SerializeField] private float playerVicinityRadius = 20f;
 
@@ -52,7 +55,7 @@ namespace Environment
             {
                 _meshFilter.mesh = null;
                 _meshCollider.sharedMesh = null;
-                
+
                 if (_touchDamageOverTime != null)
                 {
                     // A little hack that's needed because the OnTriggerExit of the sub game object won't be called when the mesh is changed to null
@@ -88,9 +91,9 @@ namespace Environment
         {
             while (_stepIdx < meshSteps.Length - 1)
             {
-                Debug.Log("Waiting to grow");
-                yield return new WaitForSeconds(growStepSeconds);
-                Debug.Log("Growing...");
+                var waitFor = Random.Range(averageGrowStepSeconds / 2,
+                    averageGrowStepSeconds + (averageGrowStepSeconds / 2));
+                yield return new WaitForSeconds(waitFor);
 
                 _stepIdx += 1;
                 SetMeshIdx(_stepIdx);
