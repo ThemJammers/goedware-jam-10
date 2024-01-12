@@ -2,9 +2,10 @@
 using System.Collections;
 using Data;
 using Interfaces;
+using Player;
+using Sacrifices;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Weapons
 {
@@ -20,9 +21,19 @@ namespace Weapons
         public UnityEvent<ProjectileData> onProjectileChanged;
         public UnityEvent onShoot;
 
+        private bool isPlayerWeapon;
+        private SacrificeController _sacrificeController;
+        
         private void Start()
         {
             if (projectileData != null) onProjectileChanged.Invoke(projectileData);
+            isPlayerWeapon = GetComponentInParent<PlayerController>();
+            _sacrificeController = SacrificeController.Instance;
+        }
+
+        private void OnEnable()
+        {
+            shootingLocked = false;
         }
 
         public virtual void Shoot()
@@ -52,7 +63,8 @@ namespace Weapons
         protected virtual IEnumerator WaitForInterval()
         {
             shootingLocked = true;
-            yield return new WaitForSecondsRealtime(projectileData.shootingInterval);
+            float factoredShootingInterval = (isPlayerWeapon ? (1 / _sacrificeController.PlayerCadenceModifier) : 1) * projectileData.shootingInterval;
+            yield return new WaitForSecondsRealtime(factoredShootingInterval);
             shootingLocked = false;
         }
     }

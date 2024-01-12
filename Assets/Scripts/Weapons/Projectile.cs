@@ -41,7 +41,7 @@ namespace Weapons
                 {
                     //A character was hit, take away that precious hp
                     GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
-                    gameCharacter.TakeDamage(projectileData.damage);
+                    gameCharacter.TakeDamage(projectileData.damage, DamageType.Ranged);
                     KnockbackCharacter(gameCharacter);
                     Dispose();
                 }

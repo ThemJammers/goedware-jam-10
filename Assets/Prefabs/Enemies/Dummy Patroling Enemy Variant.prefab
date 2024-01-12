@@ -108,6 +108,7 @@ MonoBehaviour:
       m_Calls: []
   detectionRadius: 4
   targetingSpeed: 3
+  modelTransform: {fileID: 0}
   tier: 0
 --- !u!195 &8260733814056546672
 NavMeshAgent:
@@ -130,7 +131,7 @@ NavMeshAgent:
   m_Height: 0.5
   m_BaseOffset: 0.3
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1
 --- !u!4 &2277198926606631305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3824942246952743681, guid: 158f971dfbe88664fb59d3cfa35b4304, type: 3}

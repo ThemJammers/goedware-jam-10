@@ -15,5 +15,3 @@ MonoBehaviour:
   Items:
   - prefab: {fileID: 7858950787549747225, guid: 96a0b3a23ff14c646ab5bcf606300085, type: 3}
     quality: 0
-  - prefab: {fileID: 1005321830077228765, guid: 09c55a01c805ed048957d2fc72bd2b19, type: 3}
-    quality: 0

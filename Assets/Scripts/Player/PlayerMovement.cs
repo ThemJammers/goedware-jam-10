@@ -1,4 +1,5 @@
 using Interfaces;
+using Sacrifices;
 using UnityEngine;
 
 namespace Player
@@ -30,7 +31,7 @@ namespace Player
                 return;
             }
             direction *= IsGrounded() ? movementSpeed : movementSpeed * 0.3f;
-            transform.Translate(new Vector3(direction.x, 0, direction.y));
+            transform.Translate(new Vector3(direction.x, 0, direction.y) * SacrificeController.Instance.PlayerSpeedModifier);
             CalculateWalkLookAngle(direction);
         }
         

@@ -1,6 +1,7 @@
 using Core;
 using Interfaces;
 using Loot;
+using Sacrifices;
 using UnityEngine;
 using Weapons;
 
@@ -85,9 +86,9 @@ namespace Enemies
             return false;
         }
 
-        public override void TakeDamage(int amount)
+        public override void TakeDamage(int amount, DamageType damageType)
         {
-            base.TakeDamage(amount);
+            base.TakeDamage(amount, damageType);
             //If enemy does not yet have aggro on the player -> now it does
             if (_playerTransform == null)
             {

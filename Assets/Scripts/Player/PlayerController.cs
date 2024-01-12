@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Core;
+using Sacrifices;
 using Weapons;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,7 +20,6 @@ namespace Player
         private PlayerMovement _playerMovement;
         private PlayerInput _playerInput;
         private Weapon _weapon;
-        private MeleeWeapon _meleeWeapon;
         private PlayerWeaponController _playerWeaponController;
         private PlayerAnimations _playerAnimations;
         private Coroutine meleeRoutine = null;
@@ -37,7 +37,6 @@ namespace Player
             _playerMovement = GetComponent<PlayerMovement>();
             _playerInput = GetComponent<PlayerInput>();
             _weapon = GetComponentInChildren<Weapon>();
-            _meleeWeapon = GetComponentInChildren<MeleeWeapon>(true);
             _playerWeaponController = GetComponentInChildren<PlayerWeaponController>();
             _playerAnimations = GetComponent<PlayerAnimations>();
         }
@@ -53,15 +52,15 @@ namespace Player
             _playerMovement.Move(_playerInput.MovementVector);
             _playerMovement.Turn(_playerInput.LookDirectionVector);
             if (_playerInput.Jumping) _playerMovement.Jump();
-            if (_weapon.isActiveAndEnabled)
-            {
-                if (_playerInput.Shooting) _weapon.Shoot();
-            }
-
             _playerWeaponController.SelectWeapon(_playerInput.WeaponSelection);
             if (_playerInput.Melee)
             {
                 meleeRoutine ??= StartCoroutine(TriggerMeleeAttack());
+                return;
+            }
+            if (_weapon.isActiveAndEnabled)
+            {
+                if (_playerInput.Shooting) _weapon.Shoot();
             }
         }
 
@@ -85,7 +84,7 @@ namespace Player
 
         public override void Die()
         {
-            Debug.Log($"Game Over!");
+            //Debug.Log($"Game Over!");
         }
 
         private IEnumerator TriggerMeleeAttack()

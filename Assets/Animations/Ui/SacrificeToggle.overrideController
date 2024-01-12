@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SacrificeToggle
+  m_Controller: {fileID: 9100000, guid: 25d08bbada61ad34e8a1f60ea805a078, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 898cc270c57d1334db97599c99acf0fd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 127d8bd6e73b1a449a7c8ecf731dd836, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9ec51db8e677b194387d9c746a1dbd72, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0519764b248b99742adf83e84a894b5c, type: 2}

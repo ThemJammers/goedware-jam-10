@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4780796222608593397}
   - component: {fileID: 5279908809024349182}
   - component: {fileID: 132407265855994872}
-  - component: {fileID: 1823209864042166654}
   m_Layer: 0
   m_Name: Enemy_Ballista
   m_TagString: Enemy
@@ -56,8 +55,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.3405549, z: 0.5}
-  m_Center: {x: 0, y: -0.029722542, z: 0}
+  m_Size: {x: 0.5, y: 0.58854944, z: 0.5}
+  m_Center: {x: 0, y: 0.09427473, z: 0}
 --- !u!54 &5279908809024349182
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -104,27 +103,6 @@ MonoBehaviour:
   targetingSpeed: 3
   modelTransform: {fileID: 3058120230792141887}
   tier: 0
---- !u!65 &1823209864042166654
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366375178997339974}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.38748688, z: 0.5}
-  m_Center: {x: 0, y: 0.454801, z: 0}
 --- !u!1 &6077987577992882372
 GameObject:
   m_ObjectHideFlags: 0

@@ -305,6 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8971142896539092015}
   - component: {fileID: 4878578974178278927}
+  - component: {fileID: 8068137066616702846}
   m_Layer: 0
   m_Name: GlobalPPVolume
   m_TagString: Untagged
@@ -344,3 +345,20 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: db27f4dd44b76a34babbd5f816a970c8, type: 2}
+--- !u!114 &8068137066616702846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8054887735111997898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed1793a588c4f946b5151cfb2ce3a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 4878578974178278927}
+  profiles:
+  - {fileID: 11400000, guid: db27f4dd44b76a34babbd5f816a970c8, type: 2}
+  - {fileID: 11400000, guid: 787809499de671a47ab4f4041b32ed11, type: 2}
+  - {fileID: 11400000, guid: 1a90d55db8f5d664ea638a3e725ce463, type: 2}
