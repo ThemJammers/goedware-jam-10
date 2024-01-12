@@ -5,11 +5,11 @@ namespace UI
 {
     public class InteractionLabel : Singleton<InteractionLabel>
     {
-        private Animator animator;
+        [SerializeField] private Animator animator;
 
         private void Awake()
         {
-            animator = GetComponent<Animator>();
+            if(!animator) animator = GetComponent<Animator>();
         }
 
         public void Show()
