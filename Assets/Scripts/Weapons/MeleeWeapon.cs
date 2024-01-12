@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using Core;
 using Environment;
-using Sacrifices;
+using Player;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 
 namespace Weapons
@@ -10,23 +12,42 @@ namespace Weapons
     {
         [SerializeField] private int damage;
         [SerializeField] private int knockback;
+        private PlayerController _playerController;
+
+        private void Awake()
+        {
+            _playerController = GetComponentInParent<PlayerController>();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (GetComponentInParent<GameCharacter>() && other.gameObject.Equals(GetComponentInParent<GameCharacter>().gameObject)) return;
+            if (GetComponentInParent<GameCharacter>() &&
+                other.gameObject.Equals(GetComponentInParent<GameCharacter>().gameObject)) return;
             if (other.CompareTag("Player") || other.CompareTag("Enemy"))
             {
-                //A character was hit, take away that precious hp
-                GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
-                gameCharacter.TakeDamage(damage, DamageType.Melee);
-                KnockbackCharacter(gameCharacter);
+                HitOnlyOnce(other, () =>
+                {
+                    //A character was hit, take away that precious hp
+                    GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
+                    gameCharacter.TakeDamage(damage, DamageType.Melee);
+                    KnockbackCharacter(gameCharacter);
+                });
             }
-
-            if (other.TryGetComponent<Regrowable>(out var regrowable))
+            else if (other.TryGetComponent<Regrowable>(out var regrowable))
             {
-                regrowable.CutDown();
+                HitOnlyOnce(other, () => { regrowable.CutDown(); });
             }
         }
-        
+
+        private void HitOnlyOnce(Collider target, Action action)
+        {
+            if (_playerController.ObjectsHitInLastMeleeAttack.Contains(target)) return;
+            
+            action();
+            
+            _playerController.ObjectsHitInLastMeleeAttack.Add(target);
+        }
+
         protected virtual void KnockbackCharacter(GameCharacter gameCharacter)
         {
             Rigidbody rigidbody = gameCharacter.GetComponent<Rigidbody>();

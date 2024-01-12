@@ -89,7 +89,7 @@ namespace Environment
 
         private IEnumerator Grow()
         {
-            while (_stepIdx < meshSteps.Length - 1)
+            while (_stepIdx < meshSteps.Length)
             {
                 var waitFor = Random.Range(averageGrowStepSeconds / 2,
                     averageGrowStepSeconds + (averageGrowStepSeconds / 2));

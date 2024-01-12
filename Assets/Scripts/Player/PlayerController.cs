@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Core;
 using Sacrifices;
 using Weapons;
@@ -29,8 +30,9 @@ namespace Player
 
         public UnityEvent onCharacterMoving;
         public UnityEvent onCharacterIdle;
-        
+
         private MovementState _movementState = MovementState.Idle;
+        public ISet<Collider> ObjectsHitInLastMeleeAttack { get; private set; } = new HashSet<Collider>();
 
         private void Awake()
         {
@@ -63,6 +65,7 @@ namespace Player
                 meleeRoutine ??= StartCoroutine(TriggerMeleeAttack());
                 return;
             }
+
             if (_weapon.isActiveAndEnabled)
             {
                 if (_playerInput.Shooting) _weapon.Shoot();
@@ -89,7 +92,6 @@ namespace Player
 
         public override void Die()
         {
-            //Debug.Log($"Game Over!");
             onPlayerDied?.Invoke();
         }
 
@@ -98,6 +100,7 @@ namespace Player
             _weapon.gameObject.SetActive(false);
             _playerAnimations.PlayMelee();
             yield return new WaitForSecondsRealtime(.5f);
+            ObjectsHitInLastMeleeAttack = new HashSet<Collider>();
             _weapon.gameObject.SetActive(true);
             meleeRoutine = null;
         }
