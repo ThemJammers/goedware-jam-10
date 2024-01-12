@@ -207,7 +207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4780796222608593397, guid: 158f971dfbe88664fb59d3cfa35b4304, type: 3}
       propertyPath: m_Size.y
-      value: 0.97904813
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4780796222608593397, guid: 158f971dfbe88664fb59d3cfa35b4304, type: 3}
       propertyPath: m_Enabled
@@ -215,7 +215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4780796222608593397, guid: 158f971dfbe88664fb59d3cfa35b4304, type: 3}
       propertyPath: m_Center.y
-      value: 0.48735064
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 132407265855994872, guid: 158f971dfbe88664fb59d3cfa35b4304, type: 3}
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 8260733814056546672}
-  range: 10
+  range: 3
   centrePoint: {fileID: 2277198926606631305}
 --- !u!114 &4004219014128539762
 MonoBehaviour:
@@ -294,8 +294,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.5
-  m_BaseOffset: 0
+  m_Height: 1
+  m_BaseOffset: 0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
 --- !u!4 &2277198926606631305 stripped
