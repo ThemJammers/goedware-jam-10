@@ -16,12 +16,14 @@ namespace UI
         {
             gameObject.SetActive(true);
             IsVisible = true;
+            InteractionLabel.Instance.Show();
             return true;
         }
 
         public void Hide()
         {
             gameObject.SetActive(false);
+            InteractionLabel.Instance.Hide();
             IsVisible = false;
         }
     }
