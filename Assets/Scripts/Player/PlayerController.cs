@@ -17,6 +17,8 @@ namespace Player
             Idle
         }
 
+        public UnityEvent onPlayerDied;
+
         private PlayerMovement _playerMovement;
         private PlayerInput _playerInput;
         private Weapon _weapon;
@@ -88,6 +90,7 @@ namespace Player
         public override void Die()
         {
             //Debug.Log($"Game Over!");
+            onPlayerDied?.Invoke();
         }
 
         private IEnumerator TriggerMeleeAttack()
