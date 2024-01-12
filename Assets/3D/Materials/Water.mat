@@ -130,8 +130,8 @@ Material:
     - _BaseColor: {r: 0.5442021, g: 0.7511595, b: 0.9063317, a: 0.2}
     - _Color: {r: 0.25725874, g: 0.5243298, b: 0.8000001, a: 0.2}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Normal1_Tiling: {r: 10, g: 15, b: 0, a: 0}
-    - _Normal2_Tiling: {r: 40, g: 20, b: 0, a: 0}
+    - _Normal1_Tiling: {r: 20, g: 30, b: 0, a: 0}
+    - _Normal2_Tiling: {r: 80, g: 40, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5893684598662219300
