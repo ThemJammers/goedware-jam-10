@@ -1,10 +1,6 @@
-using System;
 using Data;
 using Player;
 using UnityEngine;
-using UnityEngine.Pool;
-using Weapons;
-using Random = UnityEngine.Random;
 
 namespace Sounds
 {
