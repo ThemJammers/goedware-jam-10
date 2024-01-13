@@ -24,3 +24,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4cd74a97c451d4e4695e870edc214c09, type: 3}
   weaponPickup:
   - {fileID: 8300000, guid: f349ce40b7aa88d4aa6712bbed5ab3b3, type: 3}
+  bushCut:
+  - {fileID: 8300000, guid: 0ff5ff58a272c784098c953845aac29e, type: 3}
+  - {fileID: 8300000, guid: 62e8f8e650ed80541aa41dc5de96e5e8, type: 3}
+  scytheSlice:
+  - {fileID: 8300000, guid: 97544148e88be4640bfe730e91b496ab, type: 3}
+  - {fileID: 8300000, guid: f24eeadc46b6b3048b61186fa14545de, type: 3}
+  - {fileID: 8300000, guid: 686b4dd3378b4e04b8e645983f34f0af, type: 3}
+  - {fileID: 8300000, guid: 82f2df84ec9f0ef4387afbc463a54f1f, type: 3}

@@ -1,6 +1,7 @@
 using Data;
 using Player;
 using UnityEngine;
+using Weapons;
 
 namespace Sounds
 {
@@ -9,45 +10,49 @@ namespace Sounds
     {
         [SerializeField] private AudioClipRefs audioClipRefs;
 
-        private AudioSource footstepsAudioSource;
-        private AudioSource weaponFireAudioSource;
-        private AudioSource oneshotAudioSource;
+        private AudioSource _footstepsAudioSource;
+        private AudioSource _weaponFireAudioSource;
+        private AudioSource _oneshotAudioSource;
 
-        private PlayerController playerController;
-        private PlayerWeaponController playerWeaponController;
+        private PlayerController _playerController;
+        private PlayerWeaponController _playerWeaponController;
 
         private void Start()
         {
             var parent = transform.parent;
-            playerController = parent.GetComponent<PlayerController>();
-            playerWeaponController = parent.GetComponent<PlayerWeaponController>();
+            _playerController = parent.GetComponent<PlayerController>();
+            _playerWeaponController = parent.GetComponent<PlayerWeaponController>();
             var audioSourceComponents = GetComponents<AudioSource>();
-            footstepsAudioSource = audioSourceComponents[0];
-            weaponFireAudioSource = audioSourceComponents[1];
-            oneshotAudioSource = audioSourceComponents[2];
-            weaponFireAudioSource.loop = false;
+            _footstepsAudioSource = audioSourceComponents[0];
+            _weaponFireAudioSource = audioSourceComponents[1];
+            _oneshotAudioSource = audioSourceComponents[2];
+            _weaponFireAudioSource.loop = false;
 
             // TODO: Implement grass walking sounds (footsteps[1])
-            footstepsAudioSource.clip = audioClipRefs.footsteps[0];
+            _footstepsAudioSource.clip = audioClipRefs.footsteps[0];
 
-            playerController.onCharacterMoving.AddListener(() => footstepsAudioSource.Play());
-            playerController.onCharacterIdle.AddListener(() => footstepsAudioSource.Stop());
+            _playerController.onCharacterMoving.AddListener(() => _footstepsAudioSource.Play());
+            _playerController.onCharacterIdle.AddListener(() => _footstepsAudioSource.Stop());
+            _playerController.onMeleeAttack.AddListener(
+                () => _oneshotAudioSource.PlayOneShot(audioClipRefs.scytheSlice));
 
-            playerWeaponController.onProjectileAdded.AddListener(() =>
-                oneshotAudioSource.PlayOneShot(audioClipRefs.weaponPickup[0]));
-            playerWeaponController.Weapon.onProjectileChanged.AddListener(OnWeaponProjectileChanged);
-            playerWeaponController.Weapon.onShoot.AddListener(() => weaponFireAudioSource.Play());
+            _playerController.onBushCut.AddListener(() => _oneshotAudioSource.PlayOneShot(audioClipRefs.bushCut));
+
+            _playerWeaponController.onProjectileAdded.AddListener(() =>
+                _oneshotAudioSource.PlayOneShot(audioClipRefs.weaponPickup[0]));
+            _playerWeaponController.Weapon.onProjectileChanged.AddListener(OnWeaponProjectileChanged);
+            _playerWeaponController.Weapon.onShoot.AddListener(() => _weaponFireAudioSource.Play());
         }
 
 
         private void OnWeaponProjectileChanged(ProjectileData projectileData)
         {
             if (projectileData.name.Contains("Repeater"))
-                weaponFireAudioSource.clip = audioClipRefs.repeaterFire[0];
+                _weaponFireAudioSource.clip = audioClipRefs.repeaterFire[0];
             else if (projectileData.name.Contains("Shotgun"))
-                weaponFireAudioSource.clip = audioClipRefs.shotgunFire[0];
+                _weaponFireAudioSource.clip = audioClipRefs.shotgunFire[0];
             else if (projectileData.name.Contains("Railgun"))
-                weaponFireAudioSource.clip = audioClipRefs.railgunFire[0];
+                _weaponFireAudioSource.clip = audioClipRefs.railgunFire[0];
         }
     }
 }

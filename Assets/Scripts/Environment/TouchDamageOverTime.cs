@@ -27,7 +27,8 @@ namespace Environment
         {
             while (true)
             {
-                _touchingPlayer!.TakeDamage(touchDamage);
+                if (_touchingPlayer == null) break;
+                _touchingPlayer.TakeDamage(touchDamage);
                 yield return new WaitForSeconds(DamageIntervalSeconds);
             }
             // ReSharper disable once IteratorNeverReturns

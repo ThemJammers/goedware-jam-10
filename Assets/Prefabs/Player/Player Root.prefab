@@ -110,10 +110,16 @@ MonoBehaviour:
   HealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDied:
+    m_PersistentCalls:
+      m_Calls: []
   onCharacterMoving:
     m_PersistentCalls:
       m_Calls: []
   onCharacterIdle:
+    m_PersistentCalls:
+      m_Calls: []
+  onMeleeAttack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &8742519151999327002
@@ -881,6 +887,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   knockback: 3
+  onBushCut:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnemyHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &7635886956228215366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6227917076539989469, guid: 428f291428c8c504dbd3e2d61bed4eb6, type: 3}
@@ -925,7 +937,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: ed87246fd24c5bf40bd1e6ff865b62c4, type: 3}
     - target: {fileID: 4271281954229568355, guid: 6625eb8372d08344081f0d3cb6be76ff, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5145206793705820058, guid: 6625eb8372d08344081f0d3cb6be76ff, type: 3}
       propertyPath: m_LocalPosition.x

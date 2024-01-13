@@ -30,6 +30,9 @@ namespace Player
 
         public UnityEvent onCharacterMoving;
         public UnityEvent onCharacterIdle;
+        public UnityEvent onMeleeAttack;
+        public UnityEvent onBushCut;
+        public UnityEvent onEnemyHitMelee;
 
         private MovementState _movementState = MovementState.Idle;
         public ISet<Collider> ObjectsHitInLastMeleeAttack { get; private set; } = new HashSet<Collider>();
@@ -97,6 +100,7 @@ namespace Player
 
         private IEnumerator TriggerMeleeAttack()
         {
+            onMeleeAttack.Invoke();
             _weapon.gameObject.SetActive(false);
             _playerAnimations.PlayMelee();
             yield return new WaitForSecondsRealtime(.5f);

@@ -5,6 +5,7 @@ using Environment;
 using Player;
 using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Weapons
 {
@@ -29,22 +30,27 @@ namespace Weapons
                 {
                     //A character was hit, take away that precious hp
                     GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
+                    _playerController.onEnemyHitMelee.Invoke();
                     gameCharacter.TakeDamage(damage, DamageType.Melee);
                     KnockbackCharacter(gameCharacter);
                 });
             }
             else if (other.TryGetComponent<Regrowable>(out var regrowable))
             {
-                HitOnlyOnce(other, () => { regrowable.CutDown(); });
+                HitOnlyOnce(other, () =>
+                {
+                    _playerController.onBushCut.Invoke();
+                    regrowable.CutDown();
+                });
             }
         }
 
         private void HitOnlyOnce(Collider target, Action action)
         {
             if (_playerController.ObjectsHitInLastMeleeAttack.Contains(target)) return;
-            
+
             action();
-            
+
             _playerController.ObjectsHitInLastMeleeAttack.Add(target);
         }
 

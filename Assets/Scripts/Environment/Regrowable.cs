@@ -105,7 +105,6 @@ namespace Environment
             if (_stepIdx <= 0) return; // Shouldn't happen as there is no mesh to collide with
 
             _stepIdx -= 1;
-            Debug.Log($"Cut down to {_stepIdx}");
             SetMeshIdx(_stepIdx);
 
             onCutDown.Invoke(_stepIdx, meshSteps.Length);
