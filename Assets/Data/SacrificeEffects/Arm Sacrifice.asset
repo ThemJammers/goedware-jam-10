@@ -15,5 +15,5 @@ MonoBehaviour:
   positiveTooltipKey: Increases bullet damage by
   negativeTooltipKey: Decreases shooting frequency
   positiveModifier: 2
-  negativeModifier: 2
+  negativeModifier: 0.5
   bodyPartSacrifice: 1
