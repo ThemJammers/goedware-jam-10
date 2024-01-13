@@ -13,5 +13,7 @@ namespace Sounds
         public AudioClip[] weaponPickup;
         public AudioClip[] bushCut;
         public AudioClip[] scytheSlice;
+        
+        public AudioClip[] gruntsBoy;
     }
 }

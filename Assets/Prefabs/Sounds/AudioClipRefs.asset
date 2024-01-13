@@ -32,3 +32,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f24eeadc46b6b3048b61186fa14545de, type: 3}
   - {fileID: 8300000, guid: 686b4dd3378b4e04b8e645983f34f0af, type: 3}
   - {fileID: 8300000, guid: 82f2df84ec9f0ef4387afbc463a54f1f, type: 3}
+  gruntsBoy:
+  - {fileID: 8300000, guid: c19b305e37a3c3a4681476b1f06f8330, type: 3}
+  - {fileID: 8300000, guid: d5e10b2b85cf7834baf5effbbe8b28e1, type: 3}
+  - {fileID: 8300000, guid: ba7c25d829056694c9fb5f6089b607a9, type: 3}
+  - {fileID: 8300000, guid: 2635d290ccdd66543a29cad085c9ee23, type: 3}
+  - {fileID: 8300000, guid: 065f3e7f6958d334f83b17123deff295, type: 3}
+  - {fileID: 8300000, guid: 2bf19a2dae76a9b4eb3a4e1e3c8578e1, type: 3}
+  - {fileID: 8300000, guid: 651ac3815b4140148b7a4d37c7c72a41, type: 3}
+  - {fileID: 8300000, guid: a5e8edb5d25e5574ba45c16b9f29dd5a, type: 3}
+  - {fileID: 8300000, guid: 9f5393e18dc2bce40a14b0bacbb8436c, type: 3}
+  - {fileID: 8300000, guid: 98e96ccdce4ea8a4b92497d8f75948f4, type: 3}
+  - {fileID: 8300000, guid: e6ed84c827a82614586325c255a3c943, type: 3}
+  - {fileID: 8300000, guid: 6a8eb212296c4bc489c722e49a8c3683, type: 3}
+  - {fileID: 8300000, guid: c0fb63a12bf2021408c18e17db403490, type: 3}
+  - {fileID: 8300000, guid: d354633e330bb9b47a5735c4fa883872, type: 3}
+  - {fileID: 8300000, guid: e77a00bc004077d4cbb082ce8c5e1b1d, type: 3}

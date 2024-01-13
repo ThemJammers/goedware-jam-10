@@ -11,6 +11,7 @@ namespace Core
     public abstract class GameCharacter : MonoBehaviour, IDamageable
     {
         public UnityEvent HealthChanged;
+        public UnityEvent onDamageTaken;
         
         public int Health { get; set; } = 100;
         
@@ -71,6 +72,11 @@ namespace Core
 
         public virtual void UpdateHealth(int newHealth)
         {
+            if (newHealth > 0 && newHealth < Health)
+            {
+                onDamageTaken.Invoke();
+            }
+            
             Health = Mathf.Clamp(newHealth, 0, 100);
             HealthChanged?.Invoke();;
             if (Health <= 0)

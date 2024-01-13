@@ -37,6 +37,7 @@ namespace Sounds
                 () => _oneshotAudioSource.PlayOneShot(audioClipRefs.scytheSlice));
 
             _playerController.onBushCut.AddListener(() => _oneshotAudioSource.PlayOneShot(audioClipRefs.bushCut));
+            _playerController.onDamageTaken.AddListener(() => _oneshotAudioSource.PlayOneShot(audioClipRefs.gruntsBoy));
 
             _playerWeaponController.onProjectileAdded.AddListener(() =>
                 _oneshotAudioSource.PlayOneShot(audioClipRefs.weaponPickup[0]));
