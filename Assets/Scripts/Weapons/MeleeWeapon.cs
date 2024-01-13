@@ -1,11 +1,8 @@
 using System;
-using System.Collections;
 using Core;
 using Environment;
 using Player;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Weapons
 {
