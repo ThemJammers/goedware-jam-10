@@ -16304,6 +16304,22 @@ PrefabInstance:
       propertyPath: m_UseGeometry
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6222527559914182179, guid: cea326815c652054ca935a4793b96ad7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.38268325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222527559914182179, guid: cea326815c652054ca935a4793b96ad7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9238796
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222527559914182179, guid: cea326815c652054ca935a4793b96ad7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222527559914182179, guid: cea326815c652054ca935a4793b96ad7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 225
+      objectReference: {fileID: 0}
     - target: {fileID: 6233929016966774417, guid: cea326815c652054ca935a4793b96ad7, type: 3}
       propertyPath: m_VoxelSize
       value: 0.16666667
@@ -21689,7 +21705,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4778052062978235332, guid: cea326815c652054ca935a4793b96ad7, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2552062273024256830, guid: cea326815c652054ca935a4793b96ad7, type: 3}
       insertIndex: -1
@@ -21822,9 +21839,6 @@ PrefabInstance:
       addedObject: {fileID: 493989939}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1740732459031946517, guid: cea326815c652054ca935a4793b96ad7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4492951486673715649, guid: cea326815c652054ca935a4793b96ad7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: cea326815c652054ca935a4793b96ad7, type: 3}
