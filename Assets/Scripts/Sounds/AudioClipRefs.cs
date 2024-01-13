@@ -6,7 +6,8 @@ namespace Sounds
     [CreateAssetMenu]
     public class AudioClipRefs : ScriptableObject
     {
-        [FormerlySerializedAs("footstep")] public AudioClip[] footsteps;
+        [FormerlySerializedAs("footsteps")] public AudioClip[] footstepsRegular;
+        [FormerlySerializedAs("footsteps")] public AudioClip[] footstepsGrass;
         public AudioClip[] repeaterFire;
         public AudioClip[] shotgunFire;
         public AudioClip[] railgunFire;
@@ -15,5 +16,6 @@ namespace Sounds
         public AudioClip[] scytheSlice;
         
         public AudioClip[] gruntsBoy;
+        public AudioClip[] gruntsSpectralMonster;
     }
 }

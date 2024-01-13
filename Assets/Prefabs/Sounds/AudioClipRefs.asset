@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e633c151b374ea34cac6418172c9dd1f, type: 3}
   m_Name: AudioClipRefs
   m_EditorClassIdentifier: 
-  footsteps:
+  footstepsRegular:
+  - {fileID: 8300000, guid: ebe4448d94d6db64c8d335938caf1dab, type: 3}
+  - {fileID: 8300000, guid: 85bee02fe2c401b42a51d701e22643a0, type: 3}
+  footstepsGrass:
   - {fileID: 8300000, guid: ebe4448d94d6db64c8d335938caf1dab, type: 3}
   - {fileID: 8300000, guid: 85bee02fe2c401b42a51d701e22643a0, type: 3}
   repeaterFire:
@@ -48,3 +51,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c0fb63a12bf2021408c18e17db403490, type: 3}
   - {fileID: 8300000, guid: d354633e330bb9b47a5735c4fa883872, type: 3}
   - {fileID: 8300000, guid: e77a00bc004077d4cbb082ce8c5e1b1d, type: 3}
+  gruntsSpectralMonster:
+  - {fileID: 8300000, guid: 20979a7b09ffa1e458df09709ddee8ea, type: 3}
+  - {fileID: 8300000, guid: 1a7ce112c38df83419f440a8fcf7f4e3, type: 3}
+  - {fileID: 8300000, guid: 2820ca5660d90ec41b9fe61e0a8bbea0, type: 3}
+  - {fileID: 8300000, guid: a4ac76a3b1f47dd439b30eff7c5d47be, type: 3}
+  - {fileID: 8300000, guid: 70c1e08ff6fdb574d853090fe865c138, type: 3}
+  - {fileID: 8300000, guid: 1557817903437094b82732297d4e99e0, type: 3}
+  - {fileID: 8300000, guid: 2fa31909aac254445b75baad4683c361, type: 3}
+  - {fileID: 8300000, guid: 016bb5ed3e0dbfa4d92371e38ef92091, type: 3}
+  - {fileID: 8300000, guid: 669d98dcb31f2cf44970aecd0c670a80, type: 3}
