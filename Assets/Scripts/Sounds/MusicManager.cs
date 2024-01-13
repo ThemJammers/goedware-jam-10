@@ -1,5 +1,7 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Sounds
 {
@@ -8,33 +10,41 @@ namespace Sounds
     {
         [SerializeField] private MusicRefs musicRefs;
 
-        private AudioSource audioSource;
+        public UnityEvent<AudioClip> onCurrentlyPlaying;
+
+        private AudioSource _audioSource;
+
+        private AudioClip _currentlyPlaying;
+
 
         private void Awake()
         {
-            audioSource = GetComponent<AudioSource>();
+            _audioSource = GetComponent<AudioSource>();
         }
 
         private void Update()
         {
-            if (!audioSource.isPlaying)
+            if (_audioSource.time >= _audioSource.clip.length)
             {
+                // Finished last track. Start next
                 ChooseAndPlayRandomTrack();
             }
         }
 
         private void Start()
         {
-            audioSource.clip = musicRefs.normal[0];
-            audioSource.Play();
+            _audioSource.clip = musicRefs.normal[0];
+            _audioSource.Play();
+            onCurrentlyPlaying.Invoke(_audioSource.clip);
         }
 
         private void ChooseAndPlayRandomTrack()
         {
             // TODO: Until we have battle/normal state triggers, just play them randomly.
             var combinedClips = musicRefs.normal.Concat(musicRefs.battle);
-            audioSource.SetRandomClipFrom(combinedClips.ToArray());
-            audioSource.Play();
+            _audioSource.SetRandomClipFrom(combinedClips.ToArray());
+            _audioSource.Play();
+            onCurrentlyPlaying.Invoke(_audioSource.clip);
         }
     }
 }
