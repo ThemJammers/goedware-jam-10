@@ -70,7 +70,7 @@ namespace Core
 
         public virtual void RestoreHealth() => UpdateHealth(100);
 
-        public virtual void UpdateHealth(int newHealth)
+        private void UpdateHealth(int newHealth)
         {
             if (newHealth > 0 && newHealth < Health)
             {

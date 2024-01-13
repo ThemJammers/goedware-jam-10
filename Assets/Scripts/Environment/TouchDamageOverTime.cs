@@ -12,7 +12,7 @@ namespace Environment
 
         [CanBeNull] private GameCharacter _touchingPlayer = null;
         
-        private const float DamageIntervalSeconds = 0.3f;
+        private const float DamageIntervalSeconds = 0.6f;
         [CanBeNull] private Coroutine _damageOverTime = null;
 
         private void OnTriggerEnter(Collider other)
