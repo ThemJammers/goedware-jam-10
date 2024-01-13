@@ -108,5 +108,16 @@ namespace Player
             _weapon.gameObject.SetActive(true);
             meleeRoutine = null;
         }
+        
+        
+        public void FootstepLeft()
+        {
+            Debug.Log("Left");
+        }
+
+        public void FootstepRight()
+        {
+            Debug.Log("Right");
+        }
     }
 }

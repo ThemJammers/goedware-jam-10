@@ -110,16 +110,28 @@ MonoBehaviour:
   HealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
   onPlayerDied:
     m_PersistentCalls:
       m_Calls: []
   onCharacterMoving:
     m_PersistentCalls:
       m_Calls: []
+  onFootstepNormal:
+    m_PersistentCalls:
+      m_Calls: []
   onCharacterIdle:
     m_PersistentCalls:
       m_Calls: []
   onMeleeAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  onBushCut:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnemyHitMelee:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &8742519151999327002
@@ -211,6 +223,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2f4313f9-7afb-476a-b016-4f0081711516
     m_ActionName: Player/Melee[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a6da1c23-c425-4041-924a-22cbf7582cf8
+    m_ActionName: Player/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: KeyboardMouse
   m_DefaultActionMap: Player
@@ -784,6 +800,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2390683109283126583}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6712000862802216807, guid: 428f291428c8c504dbd3e2d61bed4eb6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1298856025001611319}
     - targetCorrespondingSourceObject: {fileID: 7639551398072540775, guid: 428f291428c8c504dbd3e2d61bed4eb6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5570010677133996819}
@@ -887,12 +906,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   knockback: 3
-  onBushCut:
-    m_PersistentCalls:
-      m_Calls: []
-  onEnemyHit:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!1 &7112254832474708220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6712000862802216807, guid: 428f291428c8c504dbd3e2d61bed4eb6, type: 3}
+  m_PrefabInstance: {fileID: 4581883959478378395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1298856025001611319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112254832474708220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f03095deeb74ea4fb89be5b7a085af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7635886956228215366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6227917076539989469, guid: 428f291428c8c504dbd3e2d61bed4eb6, type: 3}

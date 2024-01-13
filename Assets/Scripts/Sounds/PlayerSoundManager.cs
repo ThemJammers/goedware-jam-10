@@ -28,12 +28,6 @@ namespace Sounds
             _oneshotAudioSource = audioSourceComponents[2];
             _weaponFireAudioSource.loop = false;
 
-            // TODO: Chop the footsteps into separate sounds and play them as oneshots
-            // TODO: Implement grass walking sounds (footsteps[1])
-            _footstepsAudioSource.clip = audioClipRefs.footstepsRegular[0];
-
-            _playerController.onCharacterMoving.AddListener(() => _footstepsAudioSource.Play());
-            _playerController.onCharacterIdle.AddListener(() => _footstepsAudioSource.Stop());
             _playerController.onMeleeAttack.AddListener(
                 () => _oneshotAudioSource.PlayOneShot(audioClipRefs.scytheSlice));
 
@@ -55,6 +49,11 @@ namespace Sounds
                 _weaponFireAudioSource.clip = audioClipRefs.shotgunFire[0];
             else if (projectileData.name.Contains("Railgun"))
                 _weaponFireAudioSource.clip = audioClipRefs.railgunFire[0];
+        }
+
+        public void OnFootstep()
+        {
+            _footstepsAudioSource.PlayOneShot(audioClipRefs.footstepsRegular);
         }
     }
 }
