@@ -43,6 +43,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ed87246fd24c5bf40bd1e6ff865b62c4, type: 3}
   railgunFire:
   - {fileID: 8300000, guid: 4cd74a97c451d4e4695e870edc214c09, type: 3}
+  railgunDecay: {fileID: 8300000, guid: 16933923abe771f4bbe457ab2f4e8e60, type: 3}
   weaponPickup:
   - {fileID: 8300000, guid: f349ce40b7aa88d4aa6712bbed5ab3b3, type: 3}
   bushCut:

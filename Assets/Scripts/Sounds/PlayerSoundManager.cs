@@ -28,6 +28,7 @@ namespace Sounds
             _oneshotAudioSource = audioSourceComponents[2];
             _weaponFireAudioSource.loop = false;
 
+
             _playerController.onMeleeAttack.AddListener(
                 () => _oneshotAudioSource.PlayOneShot(audioClipRefs.scytheSlice));
 
@@ -37,7 +38,18 @@ namespace Sounds
             _playerWeaponController.onProjectileAdded.AddListener(() =>
                 _oneshotAudioSource.PlayOneShot(audioClipRefs.weaponPickup[0]));
             _playerWeaponController.Weapon.onProjectileChanged.AddListener(OnWeaponProjectileChanged);
-            _playerWeaponController.Weapon.onShoot.AddListener(() => _weaponFireAudioSource.Play());
+            _playerWeaponController.Weapon.onShoot.AddListener(() =>
+                _weaponFireAudioSource.PlayOneShot(_weaponFireAudioSource.clip));
+            _playerWeaponController.Weapon.onShoot.AddListener(() =>
+                _weaponFireAudioSource.PlayOneShot(_weaponFireAudioSource.clip));
+
+            _playerController.onCharacterStopShooting.AddListener(() =>
+            {
+                if (_weaponFireAudioSource.clip == audioClipRefs.railgunFire[0])
+                {
+                    _oneshotAudioSource.PlayOneShot(audioClipRefs.railgunDecay);
+                }
+            });
         }
 
 

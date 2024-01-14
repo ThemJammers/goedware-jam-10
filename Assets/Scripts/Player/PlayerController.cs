@@ -18,6 +18,12 @@ namespace Player
             Idle
         }
 
+        private enum ShootingState
+        {
+            Idle,
+            Shooting
+        }
+
         public UnityEvent onPlayerDied;
 
         private PlayerMovement _playerMovement;
@@ -34,7 +40,12 @@ namespace Player
         public UnityEvent onBushCut;
         public UnityEvent onEnemyHitMelee;
 
+        public UnityEvent onCharacterStartShooting;
+        public UnityEvent onCharacterStopShooting;
+
         private MovementState _movementState = MovementState.Idle;
+        private ShootingState _shootingState = ShootingState.Idle;
+
         public ISet<Collider> ObjectsHitInLastMeleeAttack { get; private set; } = new HashSet<Collider>();
 
         private void Awake()
@@ -67,6 +78,17 @@ namespace Player
             {
                 meleeRoutine ??= StartCoroutine(TriggerMeleeAttack());
                 return;
+            }
+
+            if (_playerInput.Shooting && _shootingState == ShootingState.Idle)
+            {
+                _shootingState = ShootingState.Shooting;
+                onCharacterStartShooting.Invoke();
+            }
+            else if (!_playerInput.Shooting && _shootingState == ShootingState.Shooting)
+            {
+                _shootingState = ShootingState.Idle;
+                onCharacterStopShooting.Invoke();
             }
 
             if (_weapon.isActiveAndEnabled)
@@ -108,8 +130,8 @@ namespace Player
             _weapon.gameObject.SetActive(true);
             meleeRoutine = null;
         }
-        
-        
+
+
         public void FootstepLeft()
         {
             Debug.Log("Left");
