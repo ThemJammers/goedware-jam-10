@@ -19,10 +19,9 @@ namespace Weapons
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            StartCoroutine(Init());
         }
 
-        private IEnumerator Init()
+        public IEnumerator Init()
         {
             yield return new WaitForEndOfFrame();
             init = true;
