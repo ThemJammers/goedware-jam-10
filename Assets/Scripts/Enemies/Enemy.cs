@@ -31,7 +31,7 @@ namespace Enemies
                 //Attack the player if it is in LoS
                 if (IsPlayerInSight())
                 {
-                    Turn(Vector2.zero); 
+                    Turn(new Vector2(_playerTransform.position.x, _playerTransform.position.z)); 
                     ShootAtPlayer();
                 }
             }
@@ -40,7 +40,8 @@ namespace Enemies
         public void Turn(Vector2 input)
         {
             //Aim towards the player
-            Quaternion targetRotation = Quaternion.LookRotation(_playerTransform.position - transform.position);
+            Vector3 input2d = new Vector3(input.x, transform.position.y , input.y);
+            Quaternion targetRotation = Quaternion.LookRotation(input2d - modelTransform.position);
             modelTransform.rotation = Quaternion.Slerp(modelTransform.rotation, targetRotation, targetingSpeed * Time.deltaTime);
         }
 

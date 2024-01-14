@@ -1,4 +1,5 @@
 using System;
+using Traps;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -6,78 +7,96 @@ namespace Enemies
 {
     public class RandomMovement : MonoBehaviour
     {
-        public UnityEngine.AI.NavMeshAgent agent;
-        public float range; //radius of sphere
-
-        public Transform centrePoint; //centre of the area the agent wants to move around in
-        //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
         private bool _move = false;
-        private Vector3 targetPosition = Vector3.zero;
+        private Vector3 movementDirection = Vector3.zero;
+        [SerializeField] private float speed;
+        [SerializeField] private LayerMask obstacleLayers;
+        [SerializeField] private Transform modelTransform;
+        private Enemy enemy;
         
         void Start()
         {
-            agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+            enemy = GetComponent<Enemy>();
             StartMoving();
-            GetTarget();
-            InvokeRepeating(nameof(CheckIfArrived), 0, .5f);
         }
 
         public void StartMoving()
         {
             _move = true;
-            agent.isStopped = false;
+            GetRandomDirection();
         }
 
         public void StopMoving()
         {
             _move = false;
-            agent.isStopped = true;
-            agent.enabled = false;
+            movementDirection = Vector3.zero;
         }
 
-        private void GetTarget()
+        private void Update()
         {
-            bool foundRandomPoint = RandomPoint(centrePoint.position, range, out targetPosition);
-            while (foundRandomPoint == false)
+            if (_move && movementDirection != Vector3.zero)
             {
-                foundRandomPoint = RandomPoint(centrePoint.position, range, out targetPosition);
+                if (HitObstacle())
+                {
+                    GetRandomDirection();
+                }
+                transform.Translate(movementDirection * speed);
+                Vector2 movement2D = new Vector2(movementDirection.x, movementDirection.z);
+                modelTransform.LookAt(transform.position + movementDirection, Vector3.up);
             }
-            agent.SetDestination(targetPosition);
         }
-    
-        void CheckIfArrived()
+
+        private void GetRandomDirection()
         {
-            if (!_move) return;
-            if(agent.remainingDistance <= agent.stoppingDistance) //done with path
+            if (movementDirection != Vector3.zero)
             {
-                targetPosition = Vector3.zero;
-                GetTarget();
-                Debug.DrawRay(targetPosition, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
+                Vector3 oppositeDirection = ((movementDirection + modelTransform.position) - modelTransform.position).normalized;
+                movementDirection = oppositeDirection;
+                if (!HitObstacle()) return;
             }
 
+            movementDirection = RandomDirection();
         }
-        bool RandomPoint(Vector3 center, float range, out Vector3 result)
-        {
 
-            Vector3 randomPoint = center + Random.insideUnitSphere * range; //random point in a sphere 
-            UnityEngine.AI.NavMeshHit hit;
-            bool foundPosition = false;
-            if (UnityEngine.AI.NavMesh.SamplePosition(randomPoint, out hit, .1f, UnityEngine.AI.NavMesh.AllAreas)) //documentation: https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html
-            { 
-                //the 1.0f is the max distance from the random point to a point on the navmesh, might want to increase if range is big
-                //or add a for loop like in the documentation
-                result = hit.position;
-                return true;
+        private Vector3 RandomDirection()
+        {
+            return new Vector3(
+                Random.Range(-1f, 1f),
+                0,
+                Random.Range(-1f, 1f));
+        }
+
+        private bool HitObstacle()
+        {
+            RaycastHit hit;
+            Vector3 rayStart = modelTransform.position + (Vector3.up * 0.1f);
+            //Check if any regular object blocks our path within .5m
+            if (Physics.Raycast(rayStart, modelTransform.forward * .6f, out hit,
+                    1, obstacleLayers))
+            {
+                if (hit.collider.gameObject != gameObject)
+                {
+                    return true;
+                }    
             }
-            
-            result = Vector3.forward * 1;
+            //Check if we are running into a death rap, dont do that
+            Collider[] suicideColliders = Physics.OverlapSphere(transform.position, .5f, 1 << 4);
+            {
+                if (suicideColliders.Length != 0)
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.white;
-            Gizmos.DrawWireSphere(centrePoint.position, range);
+            Gizmos.color = Color.blue;
+            Vector3 rayStart = modelTransform.position + (Vector3.up * 0.1f);
+            Gizmos.DrawLine(rayStart, rayStart + (modelTransform.forward * .6f));
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawRay(rayStart, rayStart + movementDirection);
         }
     }
 }

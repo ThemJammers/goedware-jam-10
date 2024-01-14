@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 391853560280014848}
   - component: {fileID: 6996387668779197639}
   - component: {fileID: 2504069037801147125}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GrowVicinityCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

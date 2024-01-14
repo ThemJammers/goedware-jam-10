@@ -88,9 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40b302001986e9499854c185cffdc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 8260733814056546672}
-  range: 10
-  centrePoint: {fileID: 2277198926606631305}
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &4004219014128539762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamageTaken:
     m_PersistentCalls:
       m_Calls: []
   detectionRadius: 4
@@ -132,8 +135,3 @@ NavMeshAgent:
   m_BaseOffset: 0.3
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
---- !u!4 &2277198926606631305 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3824942246952743681, guid: 158f971dfbe88664fb59d3cfa35b4304, type: 3}
-  m_PrefabInstance: {fileID: 3066618119109390984}
-  m_PrefabAsset: {fileID: 0}
