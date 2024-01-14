@@ -23,6 +23,8 @@ namespace Weapons
 
         private bool isPlayerWeapon;
         private SacrificeController _sacrificeController;
+
+        public ProjectileData ActiveProjectile => projectileData;
         
         private void Start()
         {
