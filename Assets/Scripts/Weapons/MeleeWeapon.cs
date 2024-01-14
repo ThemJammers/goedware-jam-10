@@ -27,7 +27,7 @@ namespace Weapons
                 {
                     //A character was hit, take away that precious hp
                     GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
-                    _playerController.onEnemyHitMelee.Invoke();
+                    _playerController.onEnemyHitMelee.Invoke(other);
                     gameCharacter.TakeDamage(damage, DamageType.Melee);
                     KnockbackCharacter(gameCharacter);
                 });
