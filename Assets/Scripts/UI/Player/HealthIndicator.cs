@@ -1,4 +1,6 @@
+using System;
 using Core;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +11,7 @@ namespace UI.Player
     {
         private Image _image;
         private GameCharacter _gameCharacter;
-        
+
         private void Awake()
         {
             _image = GetComponent<Image>();
