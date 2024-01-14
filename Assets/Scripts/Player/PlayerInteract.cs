@@ -49,6 +49,7 @@ namespace Player
         {
             if (interactablesInRange.Count == 0)
             {
+                closestInteractable = null;
                 return;
             }
 
@@ -58,6 +59,7 @@ namespace Player
 
             if (interactablesInRange.Count == 0)
             {
+                closestInteractable = null;
                 return;
             }
 
