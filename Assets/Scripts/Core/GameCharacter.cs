@@ -29,6 +29,7 @@ namespace Core
         public virtual void Die()
         {
             //TODO: Implement something actually cool
+            onDied?.Invoke(this);
             Destroy(gameObject);
         }
         

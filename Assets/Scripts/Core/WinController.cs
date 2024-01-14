@@ -21,6 +21,11 @@ namespace Core
         private void Awake()
         {
             timeStart = DateTime.Now;
+
+        }
+
+        private void Start()
+        {
             enemies = FindObjectsOfType<Enemy>().ToList();
             enemyCount = enemies.Count;
             foreach (var enemy in enemies)
