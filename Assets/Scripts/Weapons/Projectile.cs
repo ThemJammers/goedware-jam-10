@@ -59,7 +59,7 @@ namespace Weapons
             Rigidbody rigidbody = gameCharacter.GetComponent<Rigidbody>();
             Vector3 force = transform.forward * projectileData.knockbackPower;
             //force.y = .25f;
-            rigidbody.AddForce(force, ForceMode.Impulse);
+            if(rigidbody) rigidbody.AddForce(force, ForceMode.Impulse);
         }
 
         protected virtual IEnumerator DestroyWithDelay()
