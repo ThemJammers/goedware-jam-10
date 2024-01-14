@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 89b8db604bae1e14bab9bd68b57e2d11
+guid: cdcb40d59f27aa547ac9da991cb1f8c9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bullet_Wind
+    second: {fileID: 2100000, guid: c45e6aa91cfd91b42bccd160225138d2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
