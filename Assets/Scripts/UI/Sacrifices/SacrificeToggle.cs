@@ -1,6 +1,5 @@
 using halbautomaten.UnityTools.UiTools;
 using Sacrifices;
-using UnityEngine;
 
 namespace UI.Sacrifices
 {

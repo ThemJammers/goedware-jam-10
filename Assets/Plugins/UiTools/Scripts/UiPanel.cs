@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace halbautomaten.UnityTools.UiTools
 {
@@ -7,6 +8,9 @@ namespace halbautomaten.UnityTools.UiTools
     {
         private bool isVisible = false;
         private Animator animator;
+
+        public UnityEvent onShow;
+        public UnityEvent onHide;
         
         // Start is called before the first frame update
         protected virtual void Awake()
@@ -17,11 +21,13 @@ namespace halbautomaten.UnityTools.UiTools
         public virtual void Show()
         {
             ToggleVisibility(true);
+            onShow.Invoke();
         }
 
         public virtual void Hide()
         {
             ToggleVisibility(false);
+            onHide.Invoke();
         }
 
         private void ToggleVisibility(bool visible)

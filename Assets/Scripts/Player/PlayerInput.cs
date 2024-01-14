@@ -4,6 +4,8 @@ namespace Player
 {
     public class PlayerInput : MonoBehaviour
     {
+        public bool MovementInputsBlocked { get; set; }
+
         public Vector2 MovementVector { get; private set; }
         public Vector2 LookDirectionVector { get; private set; }
         public bool Jumping { get; private set; }
@@ -35,17 +37,23 @@ namespace Player
         {
             if (_input == null) return;
 
-            MovementVector = _input.Player.Movement.ReadValue<Vector2>();
-            LookDirectionVector = _input.Player.LookDirection.ReadValue<Vector2>();
-            Jumping = _input.Player.Jumping.ReadValue<float>() != 0;
-            Melee = _input.Player.Melee.ReadValue<float>() != 0;
-            Shooting = _input.Player.Shoot.ReadValue<float>() != 0;
-            Interact = _input.Player.Interact.ReadValue<float>() != 0;
-            if (_input.Player.WeaponSelection.triggered)
+            if (!MovementInputsBlocked)
             {
-                WeaponSelection = (int)_input.Player.WeaponSelection.ReadValue<float>();
+                MovementVector = _input.Player.Movement.ReadValue<Vector2>();
+                LookDirectionVector = _input.Player.LookDirection.ReadValue<Vector2>();
+                Jumping = _input.Player.Jumping.ReadValue<float>() != 0;
+                Melee = _input.Player.Melee.ReadValue<float>() != 0;
+                Shooting = _input.Player.Shoot.ReadValue<float>() != 0;
+
+                if (_input.Player.WeaponSelection.triggered)
+                {
+                    WeaponSelection = (int)_input.Player.WeaponSelection.ReadValue<float>();
+                }
+
+                Melee = _input.Player.Melee.triggered;
             }
-            Melee = _input.Player.Melee.triggered;
+
+            Interact = _input.Player.Interact.ReadValue<float>() != 0;
         }
 
         public void OnDeviceChanged(UnityEngine.InputSystem.PlayerInput input)

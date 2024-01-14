@@ -15,6 +15,6 @@ MonoBehaviour:
   damage: 20
   speed: 9
   lifetime: 0.35
-  shootingInterval: 1.8
+  shootingInterval: 1.2
   knockbackPower: 6
   prefab: {fileID: 5151914502977036383, guid: 36843656b1892bf42b7d8662bdb2d869, type: 3}
