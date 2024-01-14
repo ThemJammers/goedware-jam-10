@@ -91,8 +91,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.15
-  m_Height: 1
+  m_Radius: 0.18
+  m_Height: 1.2
   m_Direction: 1
   m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!114 &343899048084295422
@@ -129,6 +129,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onEnemyHitMelee:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacterStartShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacterStopShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &8742519151999327002
@@ -914,7 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289853c30c8e2594282f9a78a0b64c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 25
   knockback: 3
 --- !u!1 &7112254832474708220 stripped
 GameObject:

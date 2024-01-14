@@ -11,7 +11,7 @@ namespace Environment
 {
     [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(MeshRenderer))]
-    [RequireComponent(typeof(MeshCollider))]
+    [RequireComponent(typeof(Collider))]
     public class Regrowable : MonoBehaviour
     {
         // Fields
@@ -26,7 +26,7 @@ namespace Environment
 
         // Components
         private MeshFilter _meshFilter;
-        private MeshCollider _meshCollider;
+        [CanBeNull] private MeshCollider _meshCollider;
         [CanBeNull] private TouchDamageOverTime _touchDamageOverTime;
 
         // Internals
@@ -37,7 +37,8 @@ namespace Environment
         private void Awake()
         {
             _meshFilter = GetComponent<MeshFilter>();
-            _meshCollider = GetComponent<MeshCollider>();
+
+            TryGetComponent(out _meshCollider);
             _touchDamageOverTime = GetComponentInChildren<TouchDamageOverTime>();
 
             // Initialize
@@ -54,7 +55,7 @@ namespace Environment
             if (idx == 0)
             {
                 _meshFilter.mesh = null;
-                _meshCollider.sharedMesh = null;
+                if (_meshCollider != null) _meshCollider.sharedMesh = null;
 
                 if (_touchDamageOverTime != null)
                 {
@@ -66,7 +67,7 @@ namespace Environment
             {
                 var mesh = meshSteps[idx - 1];
                 _meshFilter.mesh = mesh;
-                _meshCollider.sharedMesh = mesh;
+                if (_meshCollider != null) _meshCollider.sharedMesh = mesh;
             }
         }
 
