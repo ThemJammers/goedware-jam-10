@@ -47,6 +47,7 @@ namespace Enemies
             targetPosition = ((defaultPosition) + (transform.forward * Direction()) * movingRadius);
             targetDirection = defaultPosition + (transform.forward * Direction());
             animator.SetBool("Moving", true);
+            animator.SetBool("Backwards", Direction() < 0);
         }
 
         protected override void ScanForPlayer()
