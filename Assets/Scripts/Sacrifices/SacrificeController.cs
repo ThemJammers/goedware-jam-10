@@ -83,6 +83,7 @@ namespace Sacrifices
             if(_activeEffect != null && !sacrificeChosen)
                 _activeEffect.Apply();
             GetComponentInChildren<UiPanel>().Hide();
+            sacrificeChosen = true;
         }
 
         public void SacrificeBodyPart(BodyPartSacrifice bodyPartSacrifice)

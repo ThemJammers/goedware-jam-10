@@ -24,7 +24,7 @@ namespace Weapons
 
         private IEnumerator Init()
         {
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForEndOfFrame();
             init = true;
         }
 
