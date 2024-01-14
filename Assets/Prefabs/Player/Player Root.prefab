@@ -113,6 +113,9 @@ MonoBehaviour:
   onDamageTaken:
     m_PersistentCalls:
       m_Calls: []
+  onDied:
+    m_PersistentCalls:
+      m_Calls: []
   onPlayerDied:
     m_PersistentCalls:
       m_Calls:
@@ -141,6 +144,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onEnemyHitMelee:
+    m_PersistentCalls:
+      m_Calls: []
+  onItemCollected:
     m_PersistentCalls:
       m_Calls: []
   onCharacterStartShooting:
@@ -937,7 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289853c30c8e2594282f9a78a0b64c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 17
   knockback: 3
 --- !u!1 &7112254832474708220 stripped
 GameObject:
