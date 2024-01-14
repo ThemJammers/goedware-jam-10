@@ -76,6 +76,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 078c5a6eb355f0446988af0b2b0ca5af, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2761591955162318108}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 078c5a6eb355f0446988af0b2b0ca5af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2191905520948668208}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 078c5a6eb355f0446988af0b2b0ca5af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8927145106705255510}
   m_SourcePrefab: {fileID: 100100000, guid: 078c5a6eb355f0446988af0b2b0ca5af, type: 3}
 --- !u!4 &1421413600074952494 stripped
 Transform:
@@ -125,7 +131,19 @@ MonoBehaviour:
       m_Calls: []
   onDamageTaken:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8927145106705255510}
+        m_TargetAssemblyTypeName: Sounds.EnemySoundManager, Assembly-CSharp
+        m_MethodName: PlayOnDamageTakenSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   detectionRadius: 5
   targetingSpeed: 5
   modelTransform: {fileID: 2129594356767471803}
@@ -154,6 +172,120 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.52367294, y: 1.0319616, z: 1.0965085}
   m_Center: {x: 0.000040143852, y: 0.63850015, z: 0.0056535904}
+--- !u!82 &2191905520948668208
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797552596270986644}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8927145106705255510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797552596270986644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1d8e7c0992457b8581de1d21dc9793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDamaged:
+  - {fileID: 8300000, guid: 6db5fe9d2cf9e8b448de5d6751012434, type: 3}
+  - {fileID: 8300000, guid: 14c7e405e2ef79a48ba15f1b7f7f3bfc, type: 3}
+  - {fileID: 8300000, guid: 6c3eb43fb51498e4d980574d8e50a808, type: 3}
+  - {fileID: 8300000, guid: 5c7e54c2052477e4b861d77a19ddcfbc, type: 3}
+  - {fileID: 8300000, guid: 60081b94294af2c499ac1a56976427a0, type: 3}
 --- !u!4 &2129594356767471803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 702156469932404862, guid: 078c5a6eb355f0446988af0b2b0ca5af, type: 3}

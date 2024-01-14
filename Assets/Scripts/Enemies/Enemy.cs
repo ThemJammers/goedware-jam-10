@@ -89,6 +89,7 @@ namespace Enemies
 
         public override void TakeDamage(int amount, DamageType damageType)
         {
+            Debug.Log($"Damage taken: {amount}, {damageType}");
             base.TakeDamage(amount, damageType);
             //If enemy does not yet have aggro on the player -> now it does
             if (_playerTransform == null)
