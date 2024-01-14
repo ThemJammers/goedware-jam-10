@@ -14,10 +14,17 @@ namespace Weapons
         [SerializeField] protected ProjectileData projectileData;
         private Rigidbody _rigidbody;
         private bool active = true;
+        private bool init = false;
         
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
+        }
+
+        private IEnumerator Init()
+        {
+            yield return new WaitForSecondsRealtime(0.1f);
+            init = true;
         }
 
         protected virtual void Start()
@@ -34,6 +41,7 @@ namespace Weapons
 
         protected virtual void OnTriggerEnter(Collider other)
         {
+            if (!init) return;
             if (GetComponentInParent<GameCharacter>() && other.gameObject.Equals(GetComponentInParent<GameCharacter>().gameObject)) return;
             if (other.CompareTag("Player") || other.CompareTag("Enemy"))
             {

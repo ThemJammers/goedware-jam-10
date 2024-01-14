@@ -8,7 +8,7 @@ namespace Weapons
     {
         [SerializeField] private Animator animator;
 
-        protected virtual void Awake()
+        protected virtual void Start()
         {
             InstantiateProjectile();
         }

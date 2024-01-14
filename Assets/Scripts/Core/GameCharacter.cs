@@ -12,6 +12,7 @@ namespace Core
     {
         public UnityEvent HealthChanged;
         public UnityEvent onDamageTaken;
+        public UnityEvent<GameCharacter> onDied;
         
         public int Health { get; set; } = 100;
         
