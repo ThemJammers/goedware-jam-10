@@ -16,10 +16,10 @@ namespace Environment
     {
         // Fields
         [FormerlySerializedAs("growStepSeconds")] [SerializeField]
-        private int averageGrowStepSeconds = 60;
+        private int averageGrowStepSeconds = 45;
 
-        [SerializeField] private Mesh[] meshSteps;
         [SerializeField] [CanBeNull] private Mesh defaultMesh = null;
+        [SerializeField] private Mesh[] meshSteps;
         [SerializeField] private float playerVicinityRadius = 20f;
 
         // Events
