@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 2743710779110236372}
+    - target: {fileID: 1620949198270829241, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
+      propertyPath: m_fontSize
+      value: 26.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3562619024135693291, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
       propertyPath: m_Name
       value: Weapon Toggle (1)
@@ -320,9 +324,33 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 2743710779110236372}
+    - target: {fileID: 1620949198270829241, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
+      propertyPath: m_fontSize
+      value: 26.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3562619024135693291, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
       propertyPath: m_Name
       value: Weapon Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879152907544392250, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c24a97dcf7da554e9e1718672a7f4c7, type: 3}
+    - target: {fileID: 3879152907544392250, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879152907544392250, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879152907544392250, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879152907544392250, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7084805143418418327, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
       propertyPath: m_Pivot.x
@@ -434,6 +462,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 2743710779110236372}
+    - target: {fileID: 1620949198270829241, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
+      propertyPath: m_fontSize
+      value: 26.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3562619024135693291, guid: d7d7756c337cbba42b00645b9383dee0, type: 3}
       propertyPath: m_Name
       value: Weapon Toggle (2)
