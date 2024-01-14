@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Railgun Projectile
   m_EditorClassIdentifier: 
   damage: 6
-  speed: 13
+  speed: 5
   lifetime: 3
   shootingInterval: 0.14
   knockbackPower: 0.01
