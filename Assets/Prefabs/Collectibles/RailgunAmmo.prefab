@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupEffect: {fileID: 11400000, guid: 8de48b021d7aef944ad1ac5da0a0137f, type: 2}
+  pickupSound: {fileID: 0}
 --- !u!1 &3473807587456144824
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,6 +253,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2609029364213989647}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 61f550bd8c94dbe4f8f8a363cf4bf53e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 61f550bd8c94dbe4f8f8a363cf4bf53e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 61f550bd8c94dbe4f8f8a363cf4bf53e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61f550bd8c94dbe4f8f8a363cf4bf53e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
