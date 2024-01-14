@@ -19,6 +19,7 @@ namespace Environment
         private int averageGrowStepSeconds = 60;
 
         [SerializeField] private Mesh[] meshSteps;
+        [SerializeField] [CanBeNull] private Mesh defaultMesh = null;
         [SerializeField] private float playerVicinityRadius = 20f;
 
         // Events
@@ -54,8 +55,8 @@ namespace Environment
         {
             if (idx == 0)
             {
-                _meshFilter.mesh = null;
-                if (_meshCollider != null) _meshCollider.sharedMesh = null;
+                _meshFilter.mesh = defaultMesh;
+                if (_meshCollider != null) _meshCollider.sharedMesh = defaultMesh;
 
                 if (_touchDamageOverTime != null)
                 {
