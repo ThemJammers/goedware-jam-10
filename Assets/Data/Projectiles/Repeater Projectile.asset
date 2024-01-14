@@ -18,3 +18,4 @@ MonoBehaviour:
   shootingInterval: 0.5
   knockbackPower: 2.5
   prefab: {fileID: 5151914502977036383, guid: 0ee0bd816d52a074d982b98f08228e70, type: 3}
+  sprite: {fileID: 21300000, guid: 1fdf8de53faf1ab4db93989b28315b9c, type: 3}

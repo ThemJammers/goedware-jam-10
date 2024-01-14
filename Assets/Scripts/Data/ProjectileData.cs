@@ -12,5 +12,6 @@ namespace Data
         public float shootingInterval = 1f;
         public float knockbackPower = 1;
         public GameObject prefab;
+        public Sprite sprite;
     }
 }
