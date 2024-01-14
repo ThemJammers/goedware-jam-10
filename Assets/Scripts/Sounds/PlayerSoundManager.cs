@@ -50,6 +50,8 @@ namespace Sounds
                     _oneshotAudioSource.PlayOneShot(audioClipRefs.railgunDecay);
                 }
             });
+
+            _playerController.onEnemyHitMelee.AddListener((collider) => Debug.Log(collider.transform.name));
         }
 
 
