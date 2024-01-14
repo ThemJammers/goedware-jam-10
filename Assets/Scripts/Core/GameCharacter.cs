@@ -72,7 +72,7 @@ namespace Core
 
         private void UpdateHealth(int newHealth)
         {
-            if (newHealth > 0 && newHealth < Health)
+            if (newHealth < Health)
             {
                 onDamageTaken.Invoke();
             }
