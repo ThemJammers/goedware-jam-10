@@ -21,7 +21,7 @@ namespace UI
         {
             _animator = GetComponent<Animator>();
             _toggle = GetComponent<Toggle>();
-            _label = GetComponentInChildren<TextMeshProUGUI>();
+            _label = transform.Find("Label").GetComponent<TextMeshProUGUI>();
 
             _toggle.onValueChanged.AddListener((newValue) => { _animator.SetBool(Active, newValue); });
             _label.text = "";
