@@ -13,7 +13,7 @@ namespace Enemies
         [SerializeField] private float detectionRadius = 5;
         //Defines the speed in which the enemy can aim at the player
         [SerializeField] private float targetingSpeed = 1;
-        [SerializeField] private Transform modelTransform;
+        [SerializeField] protected Transform modelTransform;
         [SerializeField] protected EnemyTier tier = EnemyTier.Tier1;
         protected Transform _playerTransform = null;
         protected Weapon _weapon;
@@ -37,7 +37,7 @@ namespace Enemies
             }
         }
 
-        public void Turn(Vector2 input)
+        public virtual void Turn(Vector2 input)
         {
             //Aim towards the player
             Vector3 input2d = new Vector3(input.x, transform.position.y , input.y);
