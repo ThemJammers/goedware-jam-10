@@ -318,7 +318,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!4 &2129594356767471803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 702156469932404862, guid: 078c5a6eb355f0446988af0b2b0ca5af, type: 3}
@@ -332,6 +332,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1421413600074952494}
     m_Modifications:
+    - target: {fileID: 2508094920926747924, guid: 445b7906bd5b5e8419f9f1296bbda700, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3575664897294283092, guid: 445b7906bd5b5e8419f9f1296bbda700, type: 3}
       propertyPath: m_Name
       value: Stats UI

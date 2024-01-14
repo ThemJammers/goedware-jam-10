@@ -6,15 +6,13 @@ using UnityEngine.UI;
 
 namespace UI.Player
 {
-    [RequireComponent(typeof(Image))]
     public class HealthIndicator : MonoBehaviour
     {
-        private Image _image;
+        [SerializeField] private Image _image;
         private GameCharacter _gameCharacter;
 
         private void Awake()
         {
-            _image = GetComponent<Image>();
             _gameCharacter = GetComponentInParent<GameCharacter>();
             _gameCharacter.HealthChanged.AddListener(onHealthChanged);
         }
@@ -25,7 +23,7 @@ namespace UI.Player
             //Probably 100
             onHealthChanged();
         }
-
+        
         private void OnDestroy()
         {
             _gameCharacter.HealthChanged.RemoveAllListeners();
