@@ -13,7 +13,7 @@ namespace UI
         private TextMeshProUGUI _label;
 
         [CanBeNull] private ProjectileData projectile;
-        
+
         private static readonly int Active = Animator.StringToHash("active");
         private static readonly int Collected = Animator.StringToHash("collected");
 
@@ -21,7 +21,7 @@ namespace UI
         {
             _animator = GetComponent<Animator>();
             _toggle = GetComponent<Toggle>();
-            _label = GetComponentInChildren<TextMeshProUGUI>();
+            _label = transform.Find("Label").GetComponent<TextMeshProUGUI>();
 
             _toggle.onValueChanged.AddListener((newValue) => { _animator.SetBool(Active, newValue); });
             _label.text = "";
@@ -38,7 +38,7 @@ namespace UI
             _animator.SetBool(Collected, true);
 
             // TODO: user-visible names
-            _label.text = projectileData.name;
+            _label.text = projectileData.name.Replace("Projectile", "").Trim();
         }
     }
 }

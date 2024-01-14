@@ -170,12 +170,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e0e465c46e6f64abf35ddc976b3989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  averageGrowStepSeconds: 13
+  averageGrowStepSeconds: 15
   meshSteps:
   - {fileID: 4134353514570314643, guid: f9d2e1264a04c954490f6c3b427d9277, type: 3}
   - {fileID: -1652133789245434421, guid: ba6859be5b4fed843b7b94f6614f42ca, type: 3}
   - {fileID: 2473454217926071470, guid: 235493080cdc3644a95afad75ee2ad31, type: 3}
-  playerVicinityRadius: 16
+  playerVicinityRadius: 18
   onCutDown:
     m_PersistentCalls:
       m_Calls: []
