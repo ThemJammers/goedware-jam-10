@@ -56,6 +56,7 @@ namespace Sacrifices
         public UnityEvent ArmSacrificed;
         public UnityEvent LegSacrificed;
         
+        private bool sacrificeChosen = false;
         private SacrificeEffect _activeEffect;
 
         private void Start()
@@ -79,7 +80,7 @@ namespace Sacrifices
 
         public void ApplySacrificeEffect()
         {
-            if(_activeEffect != null)
+            if(_activeEffect != null && !sacrificeChosen)
                 _activeEffect.Apply();
             GetComponentInChildren<UiPanel>().Hide();
         }
