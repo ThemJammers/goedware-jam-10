@@ -13,7 +13,7 @@ namespace UI
         private TextMeshProUGUI _label;
 
         [CanBeNull] private ProjectileData projectile;
-        
+
         private static readonly int Active = Animator.StringToHash("active");
         private static readonly int Collected = Animator.StringToHash("collected");
 
@@ -38,7 +38,7 @@ namespace UI
             _animator.SetBool(Collected, true);
 
             // TODO: user-visible names
-            _label.text = projectileData.name;
+            _label.text = projectileData.name.Replace("Projectile", "").Trim();
         }
     }
 }
