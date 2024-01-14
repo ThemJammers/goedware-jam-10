@@ -22,7 +22,9 @@ namespace Weapons
             for (int i = 0; i < projectileCount; i++)
             {
                 //Shot projectile
-                Instantiate(shellPrefab, transform.position + (transform.forward * .5f), transform.rotation);
+                GameObject shellObject = Instantiate(shellPrefab, transform.position + (transform.forward * .5f), transform.rotation);
+                Projectile shellProjectile = shellObject.GetComponent<Projectile>();
+                StartCoroutine(shellProjectile.Init());
                 //Get into position for next projectile
                 transform.Rotate(Vector3.up, angleStep);
             }
