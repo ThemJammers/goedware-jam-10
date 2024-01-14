@@ -248,6 +248,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42463e3d0dff12d4399e59bfbd5f3389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
+  onHide:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &6380871604468046038
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -402,9 +408,37 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3049020519275827287, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
+      propertyPath: onHighlighted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049020519275827287, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
+      propertyPath: onHighlighted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049020519275827287, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
+      propertyPath: onHighlighted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6884630368179552417}
+    - target: {fileID: 3049020519275827287, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
+      propertyPath: onHighlighted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049020519275827287, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
+      propertyPath: onHighlighted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049020519275827287, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
+      propertyPath: onHighlighted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GiveUpButtonEasterEgg, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049020519275827287, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
+      propertyPath: onHighlighted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4964416122043730775, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
       propertyPath: m_text
-      value: Give UP
+      value: Give Up
       objectReference: {fileID: 0}
     - target: {fileID: 4964416122043730775, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
       propertyPath: m_fontSize
@@ -412,15 +446,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4964416122043730775, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4964416122043730775, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4964416122043730775, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4964416122043730775, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
       propertyPath: m_fontSizeMax
@@ -432,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4964416122043730775, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4286611584
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6912820107353317385, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
       propertyPath: m_Pivot.x
@@ -500,7 +534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6912820107353317385, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: -73
       objectReference: {fileID: 0}
     - target: {fileID: 6912820107353317385, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -517,8 +551,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 440444407734067198, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6884630368179552417}
   m_SourcePrefab: {fileID: 100100000, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
+--- !u!1 &2998292531894208318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 440444407734067198, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}
+  m_PrefabInstance: {fileID: 3422972072644122816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6884630368179552417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998292531894208318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a054d140d10615e41989ad7fa14ef083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8101856664236456137 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6912820107353317385, guid: a91d674af18e31344bc76a9a6ac876a3, type: 3}

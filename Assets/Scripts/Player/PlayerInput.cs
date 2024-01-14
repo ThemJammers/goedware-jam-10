@@ -37,7 +37,11 @@ namespace Player
         {
             if (_input == null) return;
 
-            if (!MovementInputsBlocked)
+            if (MovementInputsBlocked)
+            {
+                MovementVector = Vector3.zero;
+            }
+            else
             {
                 MovementVector = _input.Player.Movement.ReadValue<Vector2>();
                 LookDirectionVector = _input.Player.LookDirection.ReadValue<Vector2>();

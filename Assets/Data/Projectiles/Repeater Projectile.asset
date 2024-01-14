@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab4ce3a6ab04e5284bb208456a5f11b, type: 3}
   m_Name: Repeater Projectile
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 17
   speed: 6.7
   lifetime: 5
   shootingInterval: 0.5
