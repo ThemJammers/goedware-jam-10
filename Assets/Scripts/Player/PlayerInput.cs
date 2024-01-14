@@ -40,6 +40,7 @@ namespace Player
             if (MovementInputsBlocked)
             {
                 MovementVector = Vector3.zero;
+                Shooting = false;
             }
             else
             {
