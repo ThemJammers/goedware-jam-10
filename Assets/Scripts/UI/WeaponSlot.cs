@@ -1,5 +1,4 @@
 using Data;
-using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,8 +12,6 @@ namespace UI
         private TextMeshProUGUI _label;
         private Image _backgroundImage;
 
-        [CanBeNull] private ProjectileData projectile;
-
         private static readonly int Active = Animator.StringToHash("active");
         private static readonly int Collected = Animator.StringToHash("collected");
 
@@ -22,6 +19,8 @@ namespace UI
         {
             _animator = GetComponent<Animator>();
             _toggle = GetComponent<Toggle>();
+            
+            // TODO: Better get these as serialized assets. Find sucks
             _label = transform.Find("Label").GetComponent<TextMeshProUGUI>();
             _backgroundImage = transform.Find("ProjectileSprite").GetComponent<Image>();
 
@@ -36,7 +35,6 @@ namespace UI
 
         public void SetCollected(ProjectileData projectileData)
         {
-            projectile = projectileData;
             _animator.SetBool(Collected, true);
 
             // TODO: user-visible names

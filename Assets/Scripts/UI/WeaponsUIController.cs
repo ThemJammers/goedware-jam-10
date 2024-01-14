@@ -13,11 +13,18 @@ namespace UI
         {
             _toggleGroup = GetComponentInChildren<ToggleGroup>();
             _slots = _toggleGroup.GetComponentsInChildren<WeaponSlot>();
+            
+            foreach (var weaponSlot in _slots)
+            {
+                weaponSlot.gameObject.SetActive(false);
+            }
         }
 
         public void UpdateSlotIdx(int idx, ProjectileData projectile)
         {
-            _slots[idx].SetCollected(projectile);
+            var slot = _slots[idx];
+            slot.gameObject.SetActive(true);
+            slot.SetCollected(projectile);
         }
 
         public void ActivateSlotIdx(int idx)
