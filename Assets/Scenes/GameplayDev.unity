@@ -4656,6 +4656,18 @@ PrefabInstance:
       propertyPath: uiController
       value: 
       objectReference: {fileID: 6814355198108173534}
+    - target: {fileID: 1102076706108034322, guid: 9ad6366fd7cc59a449e898c2c5b44271, type: 3}
+      propertyPath: projectiles.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102076706108034322, guid: 9ad6366fd7cc59a449e898c2c5b44271, type: 3}
+      propertyPath: projectiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: d74e33128f7bce9489b141ff3fee3ef2, type: 2}
+    - target: {fileID: 1102076706108034322, guid: 9ad6366fd7cc59a449e898c2c5b44271, type: 3}
+      propertyPath: projectiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69109553ba585a14ea273145c14a51d3, type: 2}
     - target: {fileID: 5040602812501103203, guid: 9ad6366fd7cc59a449e898c2c5b44271, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
