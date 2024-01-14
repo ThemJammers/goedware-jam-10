@@ -1,13 +1,7 @@
 using Interfaces;
-using JetBrains.Annotations;
 using Player;
 using Powerups;
 using UnityEngine;
-using UnityEngine.Localization.PropertyVariants.TrackedObjects;
-using UnityEngine.Serialization;
-using Weapons;
-
-// ReSharper disable Unity.NoNullPropagation
 
 namespace Collectibles
 {
@@ -15,6 +9,7 @@ namespace Collectibles
     public class Collectible : MonoBehaviour, ICollectible
     {
         [SerializeField] public PowerupEffect powerupEffect;
+        [SerializeField] public AudioClip pickupSound;
 
         protected virtual void OnTriggerEnter(Collider other)
         {
@@ -29,15 +24,12 @@ namespace Collectibles
             var playerController = player.GetComponent<PlayerController>();
             var playerWeaponController = player.GetComponent<PlayerWeaponController>();
 
+            playerController.onItemCollected.Invoke(pickupSound);
+
             powerupEffect.Apply(playerController);
             powerupEffect.Apply(playerWeaponController);
-            
-            Dispose();
-        }
 
-        public void Collect(PlayerController playerController)
-        {
-            throw new System.NotImplementedException();
+            Dispose();
         }
 
         public virtual void Dispose()

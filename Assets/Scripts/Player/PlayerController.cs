@@ -39,6 +39,7 @@ namespace Player
         public UnityEvent onMeleeAttack;
         public UnityEvent onBushCut;
         public UnityEvent<Collider> onEnemyHitMelee;
+        public UnityEvent<AudioClip> onItemCollected;
 
         public UnityEvent onCharacterStartShooting;
         public UnityEvent onCharacterStopShooting;

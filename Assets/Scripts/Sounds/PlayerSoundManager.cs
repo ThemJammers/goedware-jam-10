@@ -52,6 +52,8 @@ namespace Sounds
             });
 
             _playerController.onEnemyHitMelee.AddListener((collider) => Debug.Log(collider.transform.name));
+            
+            _playerController.onItemCollected.AddListener(_oneshotAudioSource.PlayOneShot);
         }
 
 

@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupEffect: {fileID: 11400000, guid: 387028fd9c29a5142a280dfdc536932e, type: 2}
+  pickupSound: {fileID: 8300000, guid: b458e80c5acf5914395437c7d6c40635, type: 3}
 --- !u!1001 &5463533508650376766
 PrefabInstance:
   m_ObjectHideFlags: 0
