@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positiveTooltipKey: Increases shooting frequency
   negativeTooltipKey: Decreaes visibility range
-  positiveModifier: 2
+  positiveModifier: 1.5
   negativeModifier: 0.5
   bodyPartSacrifice: 0

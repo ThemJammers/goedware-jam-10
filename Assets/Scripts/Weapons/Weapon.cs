@@ -52,7 +52,7 @@ namespace Weapons
             GameObject projectile = Instantiate(projectileData.prefab, projectileSpawn.position,
                 projectileSpawn.rotation, projectileSpawn);
             currentProjectile = projectile.GetComponent<Projectile>();
-            currentProjectile.GetComponent<Projectile>().Init();
+            StartCoroutine(currentProjectile.GetComponent<Projectile>().Init());
         }
 
         public virtual void ChangeProjectile(ProjectileData newProjectile)
