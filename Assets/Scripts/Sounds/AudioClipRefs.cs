@@ -11,6 +11,7 @@ namespace Sounds
         public AudioClip[] repeaterFire;
         public AudioClip[] shotgunFire;
         public AudioClip[] railgunFire;
+        public AudioClip railgunDecay;
         public AudioClip[] weaponPickup;
         public AudioClip[] bushCut;
         public AudioClip[] scytheSlice;

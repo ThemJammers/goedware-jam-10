@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab4ce3a6ab04e5284bb208456a5f11b, type: 3}
   m_Name: Repeater Projectile
   m_EditorClassIdentifier: 
-  damage: 13
-  speed: 6.5
+  damage: 15
+  speed: 6.7
   lifetime: 5
-  shootingInterval: 0.45
-  knockbackPower: 3
+  shootingInterval: 0.5
+  knockbackPower: 2.5
   prefab: {fileID: 5151914502977036383, guid: 0ee0bd816d52a074d982b98f08228e70, type: 3}
