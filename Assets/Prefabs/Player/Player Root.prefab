@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0.04
-  jumpPower: 15
+  jumpPower: 0
   turningSensitivity: 10
   _playerInput: {fileID: 8801652700791647995}
 --- !u!114 &8801652700791647995
